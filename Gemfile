@@ -12,6 +12,7 @@ gem 'coffee-script'
 gem 'sass-rails'
 # prise en compte des centimes/euros...
 gem 'money-rails'
+gem 'stripe'
 gem 'jquery-rails'
 gem 'uglifier'
 gem 'bootstrap-sass'
