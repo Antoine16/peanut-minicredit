@@ -15,11 +15,11 @@ class CreditsController < ApplicationController
   def create
     @credit = Credit.new(credit_params)
     @credit.user = current_user
-      if @credit.save
-        redirect_to user_credit_path
-      else
-        render :new
-      end
+    if @credit.save
+      redirect_to user_credit_path
+    else
+      render :new
+    end
   end
 
   private
