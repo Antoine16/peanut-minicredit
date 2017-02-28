@@ -16,12 +16,12 @@ ActiveRecord::Schema.define(version: 20170228095601) do
   enable_extension "plpgsql"
 
   create_table "credits", force: :cascade do |t|
-    t.integer  "amount"
-    t.float    "interest"
+    t.integer  "amount_cents",   default: 0, null: false
+    t.integer  "interest_cents", default: 0, null: false
     t.date     "refund_at"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
