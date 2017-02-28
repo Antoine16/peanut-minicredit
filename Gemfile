@@ -10,7 +10,6 @@ gem 'devise'
 gem 'redis'
 gem 'coffee-script'
 gem 'sass-rails'
-gem 'faker'
 # prise en compte des centimes/euros...
 gem 'money-rails'
 gem 'jquery-rails'
@@ -19,6 +18,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'binding_of_caller'
