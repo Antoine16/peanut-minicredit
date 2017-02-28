@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'credits/index'
-
-  get 'credits/create'
-
-  get 'credits/new'
-
-  get 'credits/show'
-
   devise_for :users
 
   root to: 'pages#home'
