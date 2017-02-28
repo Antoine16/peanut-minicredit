@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
 
-
-
   def show
     @users = User.find(params[:id])
-    @credits = Credit.all
   end
 
   private
