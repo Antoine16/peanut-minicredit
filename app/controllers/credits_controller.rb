@@ -22,6 +22,10 @@ class CreditsController < ApplicationController
     end
   end
 
+  def sim
+
+  end
+
   private
   def credit_params
     params.require(:credit).permit(:amount, :interest, :refund_at)
