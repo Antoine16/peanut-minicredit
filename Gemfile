@@ -10,6 +10,7 @@ gem 'devise'
 gem 'redis'
 gem 'coffee-script'
 gem 'sass-rails'
+gem 'faker'
 # prise en compte des centimes/euros...
 gem 'money-rails'
 gem 'jquery-rails'
