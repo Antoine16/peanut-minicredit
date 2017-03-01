@@ -3,7 +3,7 @@ class CreditsController < ApplicationController
 
 
   def index
-    @credit = Credit.all
+    @credits = Credit.all
   end
 
   def show
