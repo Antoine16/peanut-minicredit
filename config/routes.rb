@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :credits, only: [ :index, :show, :new, :create ]
   end
-  get 'credits/sim' => 'credits#sim'
+  get '/sim' => 'pages#sim'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

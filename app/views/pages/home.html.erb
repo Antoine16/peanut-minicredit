@@ -1,8 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome</h1>
 
-<%= simple_form_for :sim, url: credits_sim_path, method: :get, remote: true do |f| %>
+<div class="container">
+  <%= simple_form_for :sim, method: :get, url: sim_path, remote: true do |f| %>
   <%= f.input :amount %>
-  <%= f.input :nb_of_days %>
+  <%= f.input :nb_days %>
   <%= f.button :submit %>
-<% end %>
+  <% end %>
+</div>
+
+<div >
+  <p>Votre simulation</p>
+  <% @credit = Credit.new %>
+  <ul>
+    <li >
+      Montant demandé:
+      <p id="req-amount">
+      </p>
+    </li>
+    <li>
+      Montant total à rembourser (yc intérêts)
+      <p id="total-amount">
+      </p>
+    </li>
+    <li>
+      Intérêts
+      <p id="interests">
+      </p>
+    </li>
+    <li >
+      Date de remboursement automatique:
+      <p id="refund_date">
+      </p>
+    </li>
+  </ul>
+</div>

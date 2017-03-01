@@ -1,7 +1,8 @@
 class CreditsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :sim ]
+
 
   def index
-    @credits = Credit.all
   end
 
   def show
@@ -9,7 +10,7 @@ class CreditsController < ApplicationController
   end
 
   def new
-    @credit = Credit.new
+
   end
 
   def create
@@ -22,12 +23,9 @@ class CreditsController < ApplicationController
     end
   end
 
-  def sim
-
-  end
-
   private
   def credit_params
     params.require(:credit).permit(:amount, :interest, :refund_at)
   end
+
 end
