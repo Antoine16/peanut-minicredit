@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PEANUT</title>
+    <title>Peanut | prêts rapides via carte bleue</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>
