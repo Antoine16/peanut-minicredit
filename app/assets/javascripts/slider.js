@@ -2,8 +2,8 @@ $(document).ready(function() {
   $("#slider").slider({
       animate: true,
       value:1,
-      min: 0,
-      max: 1000,
+      min: 50,
+      max: 200,
       step: 10,
       slide: function(event, ui) {
           update(1,ui.value); //changed
@@ -13,8 +13,8 @@ $(document).ready(function() {
   $("#slider2").slider({
       animate: true,
       value:0,
-      min: 0,
-      max: 500,
+      min: 5,
+      max: 21,
       step: 1,
       slide: function(event, ui) {
           update(2,ui.value); //changed
@@ -22,8 +22,8 @@ $(document).ready(function() {
   });
 
   //Added, set initial value.
-  $("#amount").val(0);
-  $("#duration").val(0);
+  $("#amount").val(50);
+  $("#duration").val(5);
   $("#amount-label").text(0);
   $("#duration-label").text(0);
 
@@ -41,14 +41,17 @@ function update(slider,val) {
   $duration = $( "#slider2" ).slider( "value" );
    */
 
-   $total = "$" + ($amount * $duration);
+   $total = $amount * $duration;
    $( "#amount" ).val($amount);
    $( "#amount-label" ).text($amount);
    $( "#duration" ).val($duration);
    $( "#duration-label" ).text($duration);
    $( "#total" ).val($total);
-   $( "#total-label" ).text($total);
 
    $('#slider span').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+$amount+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
    $('#slider2 span').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+$duration+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
+
+
+   $('.form-pricing').submit();
 };
+
