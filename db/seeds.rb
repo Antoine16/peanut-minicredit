@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'faker'
+
+User.destroy_all
+Credit.destroy_all
 
   20.times do
     new_user = User.new(
