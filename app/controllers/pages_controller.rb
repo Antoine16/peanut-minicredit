@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   def sim
     @credit = Credit.new
     @credit.amount = sim_params[:amount]
-    @credit.refund_at = (Time.now + sim_params[:nb_days].to_i.days)
+    @credit.refund_at = (Date.today + sim_params[:nb_days].to_i.days)
     @credit.interest = @credit.amount * (sim_params[:nb_days].to_i + 2) / 100
     @total_amount = @credit.amount + @credit.interest
     respond_to do |format|
