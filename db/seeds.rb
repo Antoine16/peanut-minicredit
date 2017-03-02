@@ -9,6 +9,10 @@
 
 require 'faker'
 
+Credit.destroy_all
+User.destroy_all
+
+
   20.times do
     new_user = User.new(
       first_name: Faker::Name.first_name,
@@ -23,6 +27,7 @@ require 'faker'
       20.times do
         credit = Credit.new(
         amount_cents: Faker::Number.between(1, 200),
+        state: 'pending',
         #interest_cents: Faker::Number.between(1, 20),
         refund_at: Date.today + 1,
         user: new_user,
