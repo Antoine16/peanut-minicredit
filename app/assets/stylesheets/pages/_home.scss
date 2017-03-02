@@ -1,4 +1,92 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+
+h1 {
+    font-size: 34px;
+    text-align : left;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+p{
+  color: #333333;
+  font-family: 'Arial';
+
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+}
+
+.notice, .alert {
+  display: none;
+}
+
+
+.home-calculator-box {
+
+    padding: 26px 10px;
+    width: 490px;
+    max-width: 490px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -310px;
+    margin-left: 160px;
+}
+
+.home-calculator-box h1 {
+    color: #fff;
+    padding: 6px 15px 10px 15px;
+}
+
+.home-calculator-box .home-calculator-box-inner {
+    border-radius: 6px;
+    background: rgba(15,59,73,0.6);
+    padding: 2px;
+    position: relative;
+}
+
+.peanutCalculator {
+    background: #fafafa;
+    border-radius: 3px;
+    position: relative;
+}
+
+
+
+/* 4 étapes */
+
+.container {
+    margin-top: -60px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.peanutstep {
+    padding: 0 10px 0 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* vert requieres */
+
+
+.home-requisites {
+    color: #333333;
+}
+
+
