@@ -1,4 +1,88 @@
-/* -------------------------------------
- * CSS code specific to home page
- * (margin/padding adjustments)
- * ------------------------------------- */
+
+h1 {
+    font-size: 34px;
+    text-align : left;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+}
+
+p{
+  color: #333333;
+  font-family: 'Arial';
+
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+}
+
+.notice, .alert {
+  display: none;
+}
+
+
+.home-calculator-box-inner {
+    border-radius: 6px;
+    background: rgba(15,59,73,0.6);
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.home-calculator-box-inner h1 {
+  color: white;
+  padding: 15px;
+  font-size: 28px;
+}
+.peanutCalculator {
+    background: #fafafa;
+    border-radius: 3px;
+    position: relative;
+}
+
+
+
+/* 4 étapes */
+
+.container {
+    margin-top: -60px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.peanutstep {
+    padding: 0 10px 0 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* vert requieres */
+
+
+.home-requisites {
+    color: #333333;
+}
+
+.benefits {
+  padding-top: 180px;
+  padding-left: 75px;
+  margin-left: 80px;
+}
+
+.benefits h2 {
+  color: white;
+  text-align: left;
+  font-size: 24px;
+}

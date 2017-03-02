@@ -1,4 +1,6 @@
 class CreditsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :sim ]
+
 
   def index
     @credits = Credit.all
@@ -30,4 +32,5 @@ class CreditsController < ApplicationController
   def credit_params
     params.require(:credit).permit(:amount, :interest, :refund_at)
   end
+
 end
