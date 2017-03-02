@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-User.destroy_all
 Credit.destroy_all
+User.destroy_all
+
 
   20.times do
     new_user = User.new(
@@ -24,6 +25,7 @@ Credit.destroy_all
       20.times do
         credit = Credit.new(
         amount_cents: Faker::Number.between(1, 200),
+        state: 'pending',
         #interest_cents: Faker::Number.between(1, 20),
         refund_at: Date.today + 1,
         user: new_user,

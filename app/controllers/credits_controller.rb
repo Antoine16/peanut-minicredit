@@ -7,7 +7,11 @@ class CreditsController < ApplicationController
   end
 
   def show
-    @credit = Credit.find(params[:id])
+    @credit = Credit.find(params[:credit_id])
+    order = Order.create!(
+      credit_sku: @credit.sku, amount: @credit.price, state: 'pending')
+
+    redirect_to new_user_credit_path(order)
   end
 
   def new
