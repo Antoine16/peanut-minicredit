@@ -21,10 +21,8 @@ p{
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
-  display: flex;
 }
 
 .notice, .alert {
@@ -32,30 +30,18 @@ p{
 }
 
 
-.home-calculator-box {
-
-    padding: 26px 10px;
-    width: 490px;
-    max-width: 490px;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    margin-top: -310px;
-    margin-left: 160px;
-}
-
-.home-calculator-box h1 {
-    color: #fff;
-    padding: 6px 15px 10px 15px;
-}
-
-.home-calculator-box .home-calculator-box-inner {
+.home-calculator-box-inner {
     border-radius: 6px;
     background: rgba(15,59,73,0.6);
-    padding: 2px;
-    position: relative;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
+.home-calculator-box-inner h1 {
+  color: white;
+  padding: 15px;
+  font-size: 28px;
+}
 .peanutCalculator {
     background: #fafafa;
     border-radius: 3px;
@@ -89,4 +75,14 @@ p{
     color: #333333;
 }
 
+.benefits {
+  padding-top: 180px;
+  padding-left: 75px;
+  margin-left: 80px;
+}
 
+.benefits h2 {
+  color: white;
+  text-align: left;
+  font-size: 24px;
+}

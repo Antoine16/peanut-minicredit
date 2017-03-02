@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def simul(nb_days, amount)
-    {due_amount: amount * (1 + (nb_days + 2) / 100),
+    {
+      due_amount: amount * (1 + (nb_days + 2) / 100),
       refund_at: Time.now + nb_days.days
     }
   end
@@ -14,11 +15,11 @@ class PagesController < ApplicationController
     @credit = Credit.new
     @credit.amount = sim_params[:amount]
     @credit.refund_at = (Date.today + sim_params[:nb_days].to_i.days)
-    @credit.interest = @credit.amount * (sim_params[:nb_days].to_i + 2) / 100
+    @credit.interest = @credit.amount * (sim_params[:nb_days].to_i) / 100
     @total_amount = @credit.amount + @credit.interest
     respond_to do |format|
-        format.js  { }
-      end
+      format.js  {}
+    end
   end
 
   private

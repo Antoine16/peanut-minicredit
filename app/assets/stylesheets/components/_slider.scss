@@ -13,7 +13,7 @@
   width: 5.2em;
   height: 2.2em;
   cursor: default;
-  margin: 0 5px auto !important;
+  margin: 0 -40px auto !important;
   text-align: center;
   line-height: 30px;
   color: #FFFFFF;
@@ -81,7 +81,6 @@ h4.great {
   /*display: inline;
   padding: 10px 5px;*/
   position: relative;
-  padding-bottom: 20px;
 }
 
 .total:before {
@@ -108,15 +107,13 @@ h4.great {
 }
 
 .form-pricing {
-  background: #ffffff;
-  padding: 20px;
+  background: rgba(240,240,240,0.2);
   border-radius: 4px;
 }
 
 .price-form {
-  background: #ffffff;
+  background: rgba(240, 240, 240, 0.4);
   margin-bottom: 10px;
-  padding: 20px;
   border: 1px solid #eeeeee;
   border-radius: 4px;
   /*-moz-box-shadow:    0 5px 5px 0 #ccc;
@@ -164,10 +161,6 @@ hr.style {
     border-bottom: 1px dashed #ccc;
     background: #999;
 }
-
-
-
-
 
 .control-label {
   color: #333333;
