@@ -7,21 +7,18 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
+ <!-- Button (call-to-action) -->
+      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn " do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+      <% end %>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
-
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
+          <span id="navbar-wagon-menu" data-toggle="dropdown"><%= current_user.email %></span>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
@@ -42,10 +39,6 @@
         </div>
       </div>
     <% else %>
- <!-- Button (call-to-action) -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn " do %>
-        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
-      <% end %>
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Créer mon compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Mon compte"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
