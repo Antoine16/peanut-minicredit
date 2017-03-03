@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   validates :phone, presence: true
   validates :address, presence: true
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+
 end
