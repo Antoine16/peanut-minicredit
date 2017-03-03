@@ -18,7 +18,7 @@
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <span id="navbar-wagon-menu" data-toggle="dropdown"><%= current_user.email %></span>
+          <span id="navbar-wagon-menu" data-toggle="dropdown" class="text-white"><%= current_user.first_name %> <%= current_user.last_name %></span>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
