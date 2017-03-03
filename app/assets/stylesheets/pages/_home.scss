@@ -62,8 +62,10 @@ p{
 
 /* vert requieres */
 
-.home-requisites {
-    color: #333333;
+#home-requisites {
+  color: white;
+  padding: 20px;
+  background-color: #0F3B49;
 }
 
 .benefits {
@@ -76,4 +78,12 @@ p{
   color: white;
   text-align: left;
   font-size: 24px;
+}
+
+.col-inner {
+  padding: 30px;
+}
+
+.col-inner h2 {
+  color: #FCD678;
 }
