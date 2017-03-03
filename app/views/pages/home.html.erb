@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-1">
         <div class="home-calculator-box-inner">
-          <h1 class="lighter" itemprop="name">Besoin d’un coup de pouce ? Nous vous prêtons rapidement jusqu’a <strong> <span>200€</span></strong>.</h1>
+          <h1 class="lighter" itemprop="name">Besoin d’un coup de pouce ? Empruntez jusqu’a <strong> <span>200€</span></strong> en quelques clics et decidez quand vous remboursez!</h1>
           <div class="peanutCalculator">
             <div class="peanutAmount">
               <%= render 'shared/simulation_form' %>
@@ -12,85 +12,72 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 benefits">
-        <h2> transferts directement sur la carte de crédit</h2>
-        <h2> pas de frais superflus, vous savez exactement combien vous remboursez</h2>
-        <h2>de l'argent prêté par des vrais gens</h2>
+      <div class="col-md-6">
+        <div class="benefits">
+          <h2> transferts directement sur la carte de crédit</h2>
+          <h2> pas de frais superflus, vous savez exactement combien vous remboursez</h2>
+          <h2>de l'argent prêté par des vrais gens</h2>
+          <%= link_to new_user_credit_path(current_user), class: "navbar-wagon-item navbar-wagon-button btn" do %>
+            <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+          <% end %>
+        </div>
       </div>
     </div>
-
   </div>
-
 </div>
 
 
 <!--4 ETAPES -->
+<div class="wrapper">
+  <div class="text-center">
+    <h2>Comment fonctionne Peanut</h2>
+    <p class="short">Pourquoi notre système de prêts est si simple, rapide et efficace.</p>
+  </div>
 
 <div class="container text-center padded features">
-  <div class="row text-center">
-    <div class="col-xs-12">
-      <h2>Comment fonctionne Peanut</h2>
-      <p class="short">Pourquoi notre système de prêts est si simple, rapide et efficace.</p>
-
+  <div class="row">
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape1.png" %>
+      <h3>Définissez votre besoin</h3>
+      <p>Choisissez le montant de votre crédit et la date de remboursement! Vous voyez exactement combien vous devrez rembourser!</p>
     </div>
-    <div class="row">
-      <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape1.png" %>
-        <h3>Définissez votre besoin.</h3>
-        <p>Pas de paperasse besoin ou de perdre du temps dans des rangées interminables semblent appeler des prêts rapides, grâce à notre service 100% en ligne! Utilisez notre bar dynamique pour sélectionner exactement combien d'argent vous avez besoin et pour combien de temps.</p>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape2.png" %>
-        <h3>Parlez-nous de vous.</h3>
-        <p>Remplissez correctement notre formulaire court avec des renseignements personnels, les comptes bancaires, etc. Cela nous donnera une chance de vous connaître un peu mieux. Toutes les informations que vous nous partager sera chiffré pour votre sécurité.</p>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape3.png" %>
-        <h3>Obtenez votre prêt personnel.</h3>
-        <p>Nous répondrons à votre demande en quelques minutes, et si elle est approuvée, recevoir votre crédit personnel dans votre compte bancaire en environ 29 minutes!</p>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape4.png" %>
-        <h3>Vous payez votre prêt personnel.</h3>
-        <p>Choisissez l'option que vous préférez effectuer le paiement de votre prêt: Bancomer (Fenêtre ou Practicaja), transfert électronique ou un magasin OXXO (il y a plus de 14.000 emplacements disponibles au Mexique).</p>
-      </div>
-      <div class="row text-center">
-        <div class="col-xs-12">
-          <p></p>
-          <p class="short">Maintenant, vous savez, à emprunter en ligne est beaucoup plus facile que vous avez imaginé. Dites adieu aux longues files d'attente, attendre pendant des heures, ou d'avoir à remplir des dizaines d'exigences. Avec Kueski, commandez vos prêts immédiats et obtenir l'argent dont vous avez besoin.</p>
-        </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape2.png" %>
+      <h3>Créez votre compte sécurisé</h3>
+      <p>Pour créer votre compte, rien de plus simple, munissez vous de votre pièce d'identité, de votre carte de crédit et renseignez les informations requises en quelques secondes!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape3.png" %>
+      <h3>Votre carte est créditée!</h3>
+      <p>Nous répondrons à votre demande en quelques minutes, et si elle est approuvée, recevoir votre crédit personnel dans votre compte bancaire en environ 29 minutes!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape4.png" %>
+      <h3>Votre carte est débitée à l'échéance</h3>
+      <p>Pour rembourser votre crédit vous n'avez rien à faire, Peanut débite le montant dû à la date que vous avez choisie lorsque vous avez souscrit votre emprunt!</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <p></p>
+        <p class="short">Avec Peanut, finis les tracas pour les dépenses du quotidien! Emprunter de petites sommes est extrêmement simple, sûr et transparent! Vos emprunts sont financés directement par des particuliers, c'est pour cette raison que les intérêts sont réduits au minimum!</p>
       </div>
     </div>
   </div>
+</div>
 
+<div id="home-requisites">
+  <div class="row col-inner text-center">
+    <h2>De quoi avez vous besoin pour demander un prêt ?</h2>
+  </div>
 
-  <div class="home-requisites">
-    <div class="wrapper">
-      <div class="cols-12">
-        <div class="col col-6">
-          <div class="col-inner">
-            <h2>De quoi avez vous besoin pour demander un prêt ?</h2>
-          </div>
-        </div>
-
-        <div class="col col-6">
-          <div class="col-inner">
-            <ul>
-
-              <li>Être majeur.</li>
-
-              <li>Être de nationalité française.</li>
-
-              <li>Avoir un compte en banque et une carte de crédit.</li>
-
-              <li>Avoir un revenu mensuel justifiable.</li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <ul>
+      <li>Être majeur.</li>
+      <li>Être de nationalité française.</li>
+      <li>Avoir un compte en banque et une carte de crédit.</li>
+      <li>Pouvoir justifier d'un revenu mensuel.</li>
+    </ul>
     </div>
   </div>
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ipsa blanditiis alias asperiores ea, ut doloribus amet cumque quasi. Tempore, minus. Dolorum eius fugiat dolor tempora alias impedit optio voluptatibus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, dolor similique vel quibusdam minima, obcaecati veritatis cupiditate explicabo! Architecto, quos rerum. Nobis blanditiis eius ad sint possimus quod nostrum cum!
-  </p>
-
+</div>

@@ -4,13 +4,6 @@ class PagesController < ApplicationController
   def home
   end
 
-  def simul(nb_days, amount)
-    {
-      due_amount: amount * (1 + (nb_days + 2) / 100),
-      refund_at: Time.now + nb_days.days
-    }
-  end
-
   def sim
     @credit = Credit.new
     @credit.amount = sim_params[:amount]
