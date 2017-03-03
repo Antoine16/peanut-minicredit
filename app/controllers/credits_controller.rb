@@ -1,5 +1,5 @@
 class CreditsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :sim ]
+  skip_before_action :authenticate_user!
 
 
   def index
