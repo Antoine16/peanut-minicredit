@@ -1,13 +1,13 @@
-<h1>Credits#new</h1>
-<p>Find me in app/views/credits/new.html.erb</p>
+<br><br><br><br>
+<br><br><br><br>
 
+<div class="container">
+  <h1> Bonjour <%= current_user.first_name %> </h1>
+  <h3> Vous avez demandé un crédit de <strong><%= @credit.amount %></strong>  avec <strong><%= @credit.interest %></strong> d'intérêts
+  </h3>
+  <p>Le total des intérêts : <strong> <%= @total_amount%></strong></p>
 
-
-
-
-
-
-              <!-- LE bouton Stripe -->
+              <!-- Le bouton Stripe -->
 
   <script src="https://checkout.stripe.com/checkout.js"></script>
 
@@ -16,7 +16,7 @@
   <script>
   var handler = StripeCheckout.configure({
     key: 'pk_test_wAxg6F5ab78qiBS4Jm8Iufrg',
-    image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+    image: 'https://s13.postimg.org/ngsl9te87/peanut_stripe.png',
     locale: 'auto',
     token: function(token) {
       // You can access the token ID with `token.id`.
@@ -28,10 +28,10 @@
     // Open Checkout with further options:
     handler.open({
       name: 'Peanut',
-      description: "Bonjour <%= current_user.first_name %>",
+      email: "<%= current_user.email %>",
+      description: "<%= current_user.first_name %> <%= current_user.last_name %>",
       currency: 'eur',
-      amount: "<%= @credit.amount_cents %>",
-      panelLabel: 'Coût de votre crédit',
+      panelLabel: 'Valider',
 
     });
     e.preventDefault();
@@ -43,7 +43,7 @@
   });
   </script>
 
-
+</div>
 
 
 
