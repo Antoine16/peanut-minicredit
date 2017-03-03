@@ -12,7 +12,10 @@ class CreditsController < ApplicationController
   end
 
   def new
-    @credit = Credit.new
+    @credit = Credit.new(amount: session[:amount])
+    @credit.refund_at = (Date.today + session[:nb_days].to_i.days)
+    @credit.interest = @credit.amount * (session[:nb_days].to_i) / 100
+    @total_amount = @credit.amount + @credit.interest
   end
 
   def create

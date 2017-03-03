@@ -10,6 +10,8 @@ class PagesController < ApplicationController
     @credit.refund_at = (Date.today + sim_params[:nb_days].to_i.days)
     @credit.interest = @credit.amount * (sim_params[:nb_days].to_i) / 100
     @total_amount = @credit.amount + @credit.interest
+    session[:amount] = sim_params[:amount]
+    session[:nb_days] = sim_params[:nb_days]
     respond_to do |format|
       format.js  {}
     end
