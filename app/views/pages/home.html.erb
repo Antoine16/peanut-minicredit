@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-1">
         <div class="home-calculator-box-inner">
-          <h1 class="lighter" itemprop="name">Besoin d’un coup de pouce ? Empruntez jusqu’a <strong> <span>200€</span></strong> en quelques clics et decidez quand vous remboursez!</h1>
+          <h1 class="lighter" itemprop="name">Besoin d’un coup de pouce ? Empruntez jusqu’a <strong> <span>200€</span></strong> en quelques clics !</h1>
           <div class="peanutCalculator">
             <div class="peanutAmount">
               <%= render 'shared/simulation_form' %>
@@ -13,11 +13,11 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="benefits">
+       <!--  <div class="benefits">
           <h2> transferts directement sur la carte de crédit</h2>
           <h2> pas de frais superflus, vous savez exactement combien vous remboursez</h2>
           <h2>de l'argent prêté par des vrais gens</h2>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -28,36 +28,40 @@
 <div class="wrapper">
   <div class="text-center">
     <h2>Comment fonctionne Peanut</h2>
-    <p class="short">Pourquoi notre système de prêts est si simple, rapide et efficace.</p>
+    <p class="short">Pourquoi notre système de prêts est si simple, rapide et efficace ?</p>
   </div>
 
-  <div class="container text-center padded features">
-    <div class="row">
-      <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape1.png" %>
-        <h3>Définissez votre besoin</h3>
-        <p>Choisissez le montant de votre crédit et la date de remboursement! Vous voyez exactement combien vous devrez rembourser!</p>
-      </div>
-      <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape2.png" %>
-        <h3>Créez votre compte sécurisé</h3>
-        <p>Pour créer votre compte, rien de plus simple, munissez vous de votre pièce d'identité, de votre carte de crédit et renseignez les informations requises en quelques secondes!</p>
-      </div>
-      <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape3.png" %>
-        <h3>Votre carte est créditée!</h3>
-        <p>Nous répondrons à votre demande en quelques minutes, et si elle est approuvée, recevoir votre crédit personnel dans votre compte bancaire en environ 29 minutes!</p>
-      </div>
-      <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
-        <%= image_tag "picto-etape4.png" %>
-        <h3>Votre carte est débitée à l'échéance</h3>
-        <p>Pour rembourser votre crédit vous n'avez rien à faire, Peanut débite le montant dû à la date que vous avez choisie lorsque vous avez souscrit votre emprunt!</p>
-      </div>
-      <div class="row text-center">
-        <div class="col-xs-12">
-          <p></p>
-          <p class="short">Avec Peanut, finis les tracas pour les dépenses du quotidien! Emprunter de petites sommes est extrêmement simple, sûr et transparent! Vos emprunts sont financés directement par des particuliers, c'est pour cette raison que les intérêts sont réduits au minimum!</p>
-        </div>
+
+<div class="container text-center padded features">
+  <div class="row">
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape1.png" %>
+      <h4>Étape 1</h4>
+      <h3>Définissez votre besoin</h3>
+      <p>Choisissez le montant de votre crédit et la date de remboursement! Vous voyez exactement combien vous devrez rembourser!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape2.png" %>
+      <h4>Étape 2</h4>
+      <h3>Créez votre compte sécurisé</h3>
+      <p>Pour créer votre compte, rien de plus simple, munissez vous de votre pièce d'identité, de votre carte de crédit et renseignez les informations requises en quelques secondes!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape3.png" %>
+      <h4>Étape 3</h4>
+      <h3>Votre carte est créditée!</h3>
+      <p>Nous répondrons à votre demande en quelques minutes, et si elle est approuvée, recevoir votre crédit personnel dans votre compte bancaire en environ 29 minutes!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-etape4.png" %>
+      <h4>Étape 4</h4>
+      <h3>Votre carte est débitée à l'échéance</h3>
+      <p>Pour rembourser votre crédit vous n'avez rien à faire, Peanut débite le montant dû à la date que vous avez choisie lorsque vous avez souscrit votre emprunt!</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <p></p>
+        <p class="short">Avec Peanut, finis les tracas pour les dépenses du quotidien! Emprunter de petites sommes est extrêmement simple, sûr et transparent! Vos emprunts sont financés directement par des particuliers, c'est pour cette raison que les intérêts sont réduits au minimum!</p>
       </div>
     </div>
   </div>

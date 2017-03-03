@@ -51,9 +51,6 @@ function update(slider, val) {
   $('#slider span').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+$amount+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
   $('#slider2 span').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+$duration+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
 
-  console.log("amout: " + $amount)
-  console.log("durat: " + $duration)
-
   clearTimeout(t);
 
   t = setTimeout(function(){
