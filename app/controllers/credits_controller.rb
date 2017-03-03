@@ -1,5 +1,6 @@
 class CreditsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [ :sim ]
+  before_action :set_credit, only: [:show, :create]
 
 
   def index
@@ -7,11 +8,7 @@ class CreditsController < ApplicationController
   end
 
   def show
-    @credit = Credit.find(params[:credit_id])
-    order = Order.create!(
-      credit_sku: @credit.sku, amount: @credit.price, state: 'pending')
 
-    redirect_to new_user_credit_path(order)
   end
 
   def new
@@ -31,6 +28,10 @@ class CreditsController < ApplicationController
   private
   def credit_params
     params.require(:credit).permit(:amount, :interest, :refund_at)
+  end
+
+  def set_credit
+    @credit = Credit.where(state: 'pending').find(params[:id])
   end
 
 end

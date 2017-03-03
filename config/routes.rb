@@ -4,9 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users do
-    resources :credits, only: [ :index, :show, :new, :create ] do
-      resources :payments, only: [ :new, :create ]
-    end
+    resources :credits, only: [ :index, :show, :new, :create ]
   end
   get '/sim' => 'pages#sim'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
