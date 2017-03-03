@@ -1,13 +1,13 @@
 <form class="form-horizontal form-pricing" action="/sim" data-remote="true" method="get" role="form">
   <div class="price-slider">
-    <h4 class="great">Montant souhaité</h4>
-    <span>Minimum 50€</span>
+    <h4 class="great">Montant du prêt</h4>
+    <span>minimum 50€</span>
     <div class="col-sm-10 col-sm-offset-1">
       <div id="slider"></div>
     </div>
   </div>
   <div class="price-slider">
-    <h4 class="great">Durée</h4>
+    <h4 class="great">Durée du prêt</h4>
     <span>5 jours minimum</span>
     <div class="col-sm-10 col-sm-offset-1">
       <div id="slider2"></div>
@@ -16,7 +16,7 @@
 
   <div class="price-form">
     <div class="form-group">
-      <label for="amount" class="col-sm-6 control-label">Montant (€): </label>
+      <label for="amount" class="col-sm-6 control-label">Montant : </label>
       <div class="col-sm-6">
         <input type="hidden" name="sim[amount]" id="amount" class="form-control">
         <p class="price lead" id="amount-label"></p>
@@ -27,7 +27,7 @@
       <input type="hidden" name="sim[nb_days]" id="duration" class="form-control">
     </div>
     <div class="form-group">
-      <label for="duration" class="col-sm-6 control-label">Intérêts: </label>
+      <label for="duration" class="col-sm-6 control-label">Intérêts : </label>
       <div class="col-sm-6">
         <input type="hidden" id="duration" class="form-control">
         <p class="price lead" id="interests"></p>
@@ -36,15 +36,15 @@
     </div>
 
     <hr class="style">
-    <div class="form-group total">
-      <label for="total" class="col-sm-6 control-label"><strong>Total: </strong></label>
-      <div class="col-sm-6">
+    <div class="form-group total" style="margin-left: 0px">
+      <label for="total" class="col-sm-6 control-label"><strong>Total : </strong></label>
+      <div class="col-sm-6" style="margin-right: 0px;">
         <p class="price lead" id="total-amount"></p>
         <span class="price">€</span>
       </div>
     </div>
     <div class="form-group">
-      <label for="duration" class="col-sm-6 control-label">Date de remboursement </label>
+      <label for="duration" class="col-sm-6 control-label"> À rembourser le : </label>
       <div class="col-sm-6">
 
         <input type="hidden" id="duration" class="form-control">
