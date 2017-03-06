@@ -37,19 +37,6 @@ class CreditsController < ApplicationController
     @credit.save
   end
 
-  def payable
-    @credits = Credit.where(refund_at: Date.today)
-    @credits.each do |credit|
-      charge = Stripe::Customer.charge(
-          :amount => credit.total_amount_cents,
-          :currency => "eur",
-          :description => "Credit Peanut du @credit.created_at",
-          :customer => credit.user.stripeid,
-        )
-    end
-  end
-
-
   private
   def credit_params
     params.require(:credit).permit(:amount, :interest, :refund_at)
