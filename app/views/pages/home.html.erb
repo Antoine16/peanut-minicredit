@@ -1,4 +1,4 @@
-<div class="banner container-fluid text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.1) 50%),url(https://images.unsplash.com/photo-1475949108589-d1c69a133713?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb&amp;crop=);">
+<div class="banner container-fluid text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.1) 50%),url(http://img4.hostingpics.net/pics/306688clouds.jpg);">
 
   <div class="container-fluid">
     <div class="row">
@@ -21,7 +21,12 @@
       </div>
     </div>
   </div>
+  <div class="arrow bounce">
+  </div>
 </div>
+
+
+
 
 
 <!--4 ETAPES -->
@@ -30,6 +35,10 @@
     <h2>Comment fonctionne Peanut</h2>
     <p class="short">Pourquoi notre système de prêts est si simple, rapide et efficace ?</p>
   </div>
+
+<!--bouton switch -->
+
+
 
 
 <div class="container text-center padded features">
@@ -67,20 +76,113 @@
   </div>
 </div>
 
-<div id="home-requisites">
-  <div class="row col-inner text-center">
-    <h2>De quoi avez vous besoin pour demander un prêt ?</h2>
-  </div>
 
+
+<!--3 ETAPES dont -->
+<div class="container text-center padded features">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <ul>
-      <li>Être majeur.</li>
-      <li>Être de nationalité française.</li>
-      <li>Avoir un compte en banque et une carte de crédit.</li>
-      <li>Pouvoir justifier d'un revenu mensuel.</li>
-    </ul>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-dont-etape1.png" %>
+      <h4>Étape 1</h4>
+      <h3>Mettez à disposition votre argent</h3>
+      <p>Choisissez le montant de votre crédit et la date de remboursement! Vous voyez exactement combien vous devrez rembourser!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-dont-etape2.png" %>
+      <h4>Étape 2</h4>
+      <h3>Créez votre compte sécurisé</h3>
+      <p>Pour créer votre compte, rien de plus simple, munissez vous de votre pièce d'identité, de votre carte de crédit et renseignez les informations requises en quelques secondes!</p>
+    </div>
+    <div class="peanutstep col-xs-12 col-sm-6 col-md-3">
+      <%= image_tag "picto-dont-etape3.png" %>
+      <h4>Étape 3</h4>
+      <h>Votre carte est créditée!</h3>
+      <p>Nous répondrons à votre demande en quelques minutes, et si elle est approuvée, recevoir votre crédit personnel dans votre compte bancaire en environ 29 minutes!</p>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-xs-12">
+        <p></p>
+        <p class="short">Avec Peanut, finis les tracas pour les dépenses du quotidien! Emprunter de petites sommes est extrêmement simple, sûr et transparent! Vos emprunts sont financés directement par des particuliers, c'est pour cette raison que les intérêts sont réduits au minimum!</p>
+      </div>
     </div>
   </div>
 </div>
+
+
+<!--conditions -->
+
+
+<div id="home-requisites">
+  <div class="row">
+    <div class="text-requieres col-xs-24 col-sm-12 col-md-6">
+      <h2>De quoi avez vous besoin pour demander un prêt ?</h2>
+    </div>
+
+    <div class="bloc-requieres col-xs-24 col-sm-12 col-md-6">
+      <div class="col-xs-24 col-sm-12 col-md-6">
+        <div class="icon-requisites">
+          <%= image_tag "18.png" %>
+        </div>
+          <p class="need">Être majeur.</p>
+      </div>
+
+      <div class="bloc-requieres col-xs-24 col-sm-12 col-md-6">
+        <div class="col-xs-24 col-sm-12 col-md-6">
+          <div class="icon-requisites">
+          <%= image_tag "flag.png" %>
+        </div>
+          <p class="need">Être de nationalité française.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="bloc-requieres col-xs-24 col-sm-12 col-md-6">
+    </div>
+    <div class="col-xs-24 col-sm-12 col-md-6">
+      <div class="bloc-requieres col-xs-24 col-sm-12 col-md-6">
+        <div class="icon-requisites">
+          <%= image_tag "bank.png" %>
+        </div>
+          <p class="need">Avoir un compte en banque et une carte de crédit.</p>
+      </div>
+      <div class="bloc-requieres col-xs-24 col-sm-12 col-md-6">
+        <div class="icon-requisites">
+          <%= image_tag "briefcase.png" %>
+        </div>
+          <p class="need">Pouvoir justifier d'un revenu mensuel.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--Foires aux questions -->
+<p>
+Questions fréquentes
+
+Comment Peanut prêts immédiats?
+Montant emprunte 1000 $ à 2000 $.
+Date limite: vous pouvez payer entre un jour à 30.
+Quand dois - je payer mon prêt?
+Skua le jour où vous avez choisi.
+¿Kueski sécuritaire?
+Oui, Kueski est enregistré auprès du CONDUSEF NewCo et la CNBV. De plus, nous utilisons les informations cryptées avec le niveau de sécurité très élevé.
+
+Que dois-je faire pour obtenir mon prêt?
+
+Choisissez le montant et la durée avec les barres bleues.
+Observer le total à payer et la date de paiement
+Cliquez sur le bouton vert pour remplir votre demande de prêt en ligne. Peu importe où vous êtes, toujours rempli application via notre site. Fais le toi même
+Remplissez votre demande
+
+Comment ne Peanut fonds pour me déposer et comment puis-je effectuer mon paiement?
+
+Kueski utilise un système de paiements électroniques déposés directement dans un compte bancaire spécifique doit être à votre nom.
+Votre paiement de prêt est effectué à travers une fenêtre ou un dépôt de practicaja Bancomer, le transfert ou le paiement électronique par référence dans Oxxo. Vous choisissez celui qui vous convient.
+
+</p>
 
