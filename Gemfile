@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
 gem 'jquery-ui-rails'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'binding_of_caller'
