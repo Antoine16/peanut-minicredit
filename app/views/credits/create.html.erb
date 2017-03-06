@@ -5,5 +5,5 @@
     <h1> Merci d'avoir choisi Peanut, <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
     <h2> Votre crédit est en route!</h2>
     <h3> Pour rappel, il sera disponible dans 24h!</h3>
-    <h3> Nous prélèverons son remboursement de <%= @total_amount %> € le <%= @credit.refund_at.strftime("%d/%m/%Y")%></h3>
+    <h3> Nous prélèverons son remboursement de <%= @credit.total_amount %> € le <%= @credit.refund_at.strftime("%d/%m/%Y")%></h3>
   </div>
