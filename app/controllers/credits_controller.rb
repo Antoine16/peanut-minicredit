@@ -1,31 +1,40 @@
 class CreditsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :sim ]
-  before_action :set_credit, only: [:show, :create]
-
+  before_action :set_credit, only: [:new, :create ]
 
   def index
     @credits = Credit.all
   end
 
   def show
-
   end
 
   def new
-    @credit = Credit.new(amount: session[:amount])
-    @credit.refund_at = (Date.today + session[:nb_days].to_i.days)
-    @credit.interest = @credit.amount * (session[:nb_days].to_i) / 100
-    @total_amount = @credit.amount + @credit.interest
   end
 
   def create
-    @credit = Credit.new(credit_params)
     @credit.user = current_user
-    if @credit.save
-      redirect_to user_credit_path
+    if current_user.stripeid == nil
+      customer = Stripe::Customer.create(
+            :email => params[:stripeEmail],
+            :source  => params[:stripeToken],
+            :account_balance => @credit.amount_cents,
+            :metadata => {"first_name" => current_user.first_name,
+                          "last_name" => current_user.last_name,
+            }
+          )
+      current_user.stripeid = customer.id
+      current_user.save
+
     else
-      render :new
+      customer = Stripe::Customer.retrieve(current_user.stripeid)
+      customer.account_balance = @credit.amount_cents
+      customer.save
     end
+
+    rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to new_user_credit_path
+    @credit.save
   end
 
   private
@@ -34,7 +43,13 @@ class CreditsController < ApplicationController
   end
 
   def set_credit
-    @credit = Credit.where(state: 'pending').find(params[:id])
+    @credit = Credit.new(amount: session[:amount])
+    @credit.refund_at = (Date.today + session[:nb_days].to_i.days)
+    @credit.interest = @credit.amount * (session[:nb_days].to_i) / 100
+    @credit.total_amount = @credit.amount + @credit.interest
   end
 
 end
+
+
+

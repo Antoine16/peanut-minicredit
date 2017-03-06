@@ -4,44 +4,32 @@
   <div class="container">
     <h1> Bonjour <strong><%= current_user.first_name.capitalize %></strong> </h1>
     <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
-    <h3> Le montant total de votre remboursement sera de <%= @total_amount %> €</h3>
+    <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
+    <h3> Et son remboursement de <%= @credit.total_amount %> € sera directement prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
     <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
-    <h3> Il sera directement prélevé sur votre carte banquaire le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
+    <%= form_tag user_credits_path do %>
+      <article>
+        <% if flash[:error].present? %>
+          <div id="error_explanation">
+            <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
+      </article>
+
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
+              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+              data-description="informations carte à créditer"
+              data-name="Peanut"
+              data-email="<%= current_user.email %>"
+              data-panel-label="Créditer ma carte"
+              data-label="Obtenir mon crédit"
+              data-currency="EUR"></script>
+    <% end %>
   </div>
-              <!-- Le bouton Stripe -->
-  <div class="row">
-    <div class="col-sm-12 col-md-6 col-md-offset-3 stripe-btn">
-      <script src="https://checkout.stripe.com/checkout.js"></script>
-      <button id="customButton" class="btn-lg btn-success">Je demande mon crédit </button>
-      <script>
-      var handler = StripeCheckout.configure({
-        key: 'pk_test_wAxg6F5ab78qiBS4Jm8Iufrg',
-        image: 'https://s13.postimg.org/ngsl9te87/peanut_stripe.png',
-        locale: 'auto',
-        token: function(token) {
-          // You can access the token ID with `token.id`.
-          // Get the token ID to your server-side code for use.
-        }
-      });
 
-      document.getElementById('customButton').addEventListener('click', function(e) {
-        // Open Checkout with further options:
-        handler.open({
-          name: 'Peanut',
-          email: "<%= current_user.email %>",
-          description: "<%= current_user.first_name %> <%= current_user.last_name %>",
-          currency: 'eur',
-          panelLabel: 'Valider',
 
-        });
-        e.preventDefault();
-      });
 
-      // Close Checkout on page navigation:
-      window.addEventListener('popstate', function() {
-        handler.close();
-      });
-      </script>
-    </div>
-  </div>
+   <!-- Le bouton Stripe -->
+
 </div>

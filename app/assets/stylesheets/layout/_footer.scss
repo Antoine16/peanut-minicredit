@@ -23,6 +23,7 @@ body {
 }
 
 .footer {
+
   position: absolute;
   right: 0;
   bottom: 0;
@@ -47,4 +48,13 @@ body {
 a{
   color: white;
   font-weight: 200;
+}
+
+.list-inline  {
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+#logo-footer {
+  padding-right: 55px;
 }
