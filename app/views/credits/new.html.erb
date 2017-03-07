@@ -7,7 +7,7 @@
     <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
     <h3> Et son remboursement de <%= @credit.total_amount %> € sera directement prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
     <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
-    <%= form_tag user_credits_path do %>
+    <%= form_tag credits_path do %>
       <article>
         <% if flash[:error].present? %>
           <div id="error_explanation">

@@ -24,7 +24,6 @@ class CreditsController < ApplicationController
           )
       current_user.stripeid = customer.id
       current_user.save
-
     else
       customer = Stripe::Customer.retrieve(current_user.stripeid)
       customer.account_balance = @credit.amount_cents
@@ -33,8 +32,7 @@ class CreditsController < ApplicationController
     @credit.save
     rescue Stripe::CardError => e
         flash[:error] = e.message
-        redirect_to new_user_credit_path
-
+        redirect_to new_credit_path
   end
 
   private
@@ -46,8 +44,7 @@ class CreditsController < ApplicationController
     @credit = Credit.new(amount: session[:amount])
     @credit.refund_at = (Date.today + session[:nb_days].to_i.days)
     @credit.interest = @credit.amount * (session[:nb_days].to_i) / 100
-    @credit.total_amount_cents = (@credit.amount + @credit.interest) * 100
-
+    @credit.total_amount = @credit.amount + @credit.interest
   end
 
 end
