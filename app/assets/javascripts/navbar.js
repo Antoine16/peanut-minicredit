@@ -5,10 +5,12 @@ $(document).ready(function(){
 
       if (scroll >= 700) {
           $("#CTA").show();
-          $(".navbar-wagon").addClass("navbar-wagon-color");
+          $(".navbar-wagon").addClass("color");
+
       } else {
           $("#CTA").hide();
 
+          $(".navbar-wagon").removeClass("color");
       }
   });
 });
