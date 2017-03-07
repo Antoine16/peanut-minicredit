@@ -1,4 +1,82 @@
-<h1>Credits#index</h1>
-<p>Find me in app/views/credits/index.html.erb</p>
 
+ici lister les crédits, leurs états.
+<br> <br><br>
 
+<div>
+  <h3><%= current_user.first_name.capitalize %> retrouvez ci-dessous vos crédits :</h3>
+</div>
+
+<div class="container padded">
+  <div class="wrapper-credit">
+<!-- ici mettre crédit pending -->
+    <div class="bloc-credit">
+      <% pendings = current_user.credits.where(state: "pending") %>
+      <% if pendings.any? %>
+        <% pendings.each do |credit| %>
+          <div class="row">
+            <div class="col-sm-6">
+              <ul>
+                <li>
+                  Vous avez un crédit en cours.
+                </li>
+                <li>
+                  Son montant est de : <strong class="essai"><%= credit.amount %> € </strong>
+                </li>
+                <li>
+                  Il a été effectué le : <%= credit.created_at %>
+                </li>
+                <li>
+                  Il sera débité de votre compte le : <%= credit.refund_at.strftime("%d/%m/%Y") %>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6">
+              <div class="peanut-pending">
+              <%= image_tag "peanut-stripe.png" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <li>
+        Vous n'avez pas de crédit en cours.
+        </li>
+      <% end %>
+    </div>
+
+  <!-- ici mettre crédit paid -->
+    <div class="bloc-credit">
+      <% paids = current_user.credits.where(state: "paid") %>
+      <% if paids.any? %>
+        <% paids.each do |credit| %>
+          <div class="row">
+            <div class="col-sm-6">
+              <ul>
+                <li>
+                  Historique de vos crédits.
+                </li>
+                <li>
+                  Son montant est de : <strong class="essai"><%= credit.amount %> € </strong>
+                </li>
+                <li>
+                  Il a été effectué le : <%= credit.created_at %>
+                </li>
+                <li>
+                  Il sera débité de votre compte le : <%= credit.refund_at.strftime("%d/%m/%Y") %>
+                </li>
+
+              </ul>
+            </div>
+          <div class="col-sm-6">
+            <%= image_tag "peanut-credit-over.png" %>
+           </div>
+          </div>
+        <% end %>
+      <% else %>
+        <li>
+        Aucun crédit dans votre historique.
+        </li>
+      <% end %>
+    </div>
+  </div>
+</div>
