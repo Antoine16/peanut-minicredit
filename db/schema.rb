@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307135151) do
+
+ActiveRecord::Schema.define(version: 20170306155445) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "credits", force: :cascade do |t|
-    t.integer  "amount_cents",       default: 0, null: false
-    t.integer  "interest_cents",     default: 0, null: false
+    t.integer  "amount_cents",       default: 0,         null: false
+    t.integer  "interest_cents",     default: 0,         null: false
     t.date     "refund_at"
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "state"
-    t.integer  "total_amount_cents", default: 0, null: false
-    t.integer  "loan_id"
-    t.index ["loan_id"], name: "index_credits_on_loan_id", using: :btree
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "total_amount_cents", default: 0,         null: false
+    t.string   "state",              default: "pending"
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
