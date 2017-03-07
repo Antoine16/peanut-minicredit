@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :users
 
   root to: 'pages#home'
 
+  resources :loans, only: [ :index, :show, :new, :create ]
+
   resources :users do
-    resources :credits, only: [ :index, :show, :new, :create ]
+      resources :credits, only: [ :index, :show, :new, :create ]
   end
   get '/sim' => 'pages#sim'
 
