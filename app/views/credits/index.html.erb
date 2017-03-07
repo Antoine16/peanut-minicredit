@@ -59,7 +59,7 @@ ici lister les crédits, leurs états.
                   Son montant est de : <strong class="essai"><%= credit.amount %> € </strong>
                 </li>
                 <li>
-                  Il a été effectué le : <%= credit.created_at %>
+                  Il a été effectué le : <%= credit.created_at.strftime("%d/%m/%Y") %>
                 </li>
                 <li>
                   Il sera débité de votre compte le : <%= credit.refund_at.strftime("%d/%m/%Y") %>
