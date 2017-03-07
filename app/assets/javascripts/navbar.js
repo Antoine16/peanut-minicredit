@@ -8,7 +8,7 @@ $(document).ready(function(){
           $(".navbar-wagon").addClass("navbar-wagon-color");
       } else {
           $("#CTA").hide();
-          $(".navbar-wagon").removeClass("navbar-wagon-color");
+
       }
   });
 });
