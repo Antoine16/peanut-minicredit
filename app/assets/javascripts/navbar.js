@@ -9,6 +9,7 @@ $(document).ready(function(){
 
       } else {
           $("#CTA").hide();
+
           $(".navbar-wagon").removeClass("color");
       }
   });
