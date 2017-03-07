@@ -1,2 +1,14 @@
 <h1>Loans#new</h1>
 <p>Find me in app/views/loans/new.html.erb</p>
+
+<h1>Combien souhaitez-vous prêter?</h1>
+
+<%= simple_form_for @loan, url: simul_path, method: :get do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :capital, label: "Entrez votre montant:" %>
+  <%= f.input :roi, label: "Entrez votre taux:" %>
+
+  <%= f.button :submit %>
+
+<% end %>
