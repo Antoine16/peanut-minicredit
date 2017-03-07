@@ -5,9 +5,8 @@
     <h1> Bonjour <strong><%= current_user.first_name.capitalize %></strong> </h1>
     <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
     <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
-    <h3> Et son remboursement de <%= @total_amount %> €</h3>
+    <h3> Et son remboursement de <%= @credit.total_amount %> € sera directement prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
     <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
-    <h3> sera directement prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
     <%= form_tag user_credits_path do %>
       <article>
         <% if flash[:error].present? %>
@@ -15,17 +14,16 @@
             <p><%= flash[:error] %></p>
           </div>
         <% end %>
-        <label class="amount">
-          <span>Montant: <%= @total_amount %>€</span>
-        </label>
       </article>
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Votre crédit"
+              data-description="informations carte à créditer"
+              data-name="Peanut"
               data-email="<%= current_user.email %>"
-              data-amount="<%= @credit.total_amount_cents %>"
-              data-locale="eur"
+              data-panel-label="Créditer ma carte"
+              data-label="Obtenir mon crédit"
               data-currency="EUR"></script>
     <% end %>
   </div>

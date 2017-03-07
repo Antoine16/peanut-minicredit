@@ -13,26 +13,28 @@ class CreditsController < ApplicationController
 
   def create
     @credit.user = current_user
-    @credit.save
     if current_user.stripeid == nil
       customer = Stripe::Customer.create(
             :email => params[:stripeEmail],
             :source  => params[:stripeToken],
-            :account_balance => @credit.amount_cents
+            :account_balance => @credit.amount_cents,
+            :metadata => {"first_name" => current_user.first_name,
+                          "last_name" => current_user.last_name,
+            }
           )
       current_user.stripeid = customer.id
       current_user.save
+
     else
       customer = Stripe::Customer.retrieve(current_user.stripeid)
       customer.account_balance = @credit.amount_cents
       customer.save
     end
-
-    # send money
-
+    @credit.save
     rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to new_user_credit_path
+
   end
 
   private

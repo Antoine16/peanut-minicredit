@@ -3,7 +3,7 @@
 /* rails des curseurs */
 .ui-widget-content {
   border: 2px solid #bdc3c7;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 /* slider prix et date */
 
@@ -18,6 +18,8 @@
   line-height: 30px;
   color: #FFFFFF;
   font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+
 }
 /* flèches des curseurs */
 .ui-slider .ui-slider-handle .glyphicon {
@@ -25,6 +27,7 @@
   margin: 0 3px;
   font-size: 11px;
   opacity: 0.6;
+
 }
 
 .ui-corner-all {
@@ -60,10 +63,13 @@
 
 .price, .lead p {
   font-weight: 600;
-  font-size: 28px;
+  font-size: 20px;
   display: inline-block;
   line-height: 60px;
   color: #333333;
+  font-family: 'Roboto', sans-serif;
+
+
 }
 /* montant du prêt text et durée */
 h4.great {
@@ -73,6 +79,8 @@ h4.great {
   font-size: 18px;
   font-weight: 600;
   display: inline-block;
+  font-family: 'Roboto', sans-serif;
+
 
 }
 
@@ -83,6 +91,7 @@ h4.great {
   position: relative;
 }
 
+/*
 .total:before {
   content: "";
   display: inline;
@@ -94,9 +103,10 @@ h4.great {
   background: #7f8c8d;
   opacity: 0.5;
 }
+*/
 
 .price-slider {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .price-slider span {
@@ -104,13 +114,16 @@ h4.great {
   display: inline-block;
   color: #7f8c8d;
   font-size: 13px;
+
+
+
 }
 
 .form-pricing {
   background: rgba(240,240,240,0.2);
   border-radius: 4px;
 }
-
+/*
 .price-form {
   background: rgba(240, 240, 240, 0.4);
   margin-bottom: 10px;
@@ -119,7 +132,7 @@ h4.great {
   /*-moz-box-shadow:    0 5px 5px 0 #ccc;
     -webkit-box-shadow: 0 5px 5px 0 #ccc;
     box-shadow:         0 5px 5px 0 #ccc;*/
-}
+
 
 .form-group {
   margin-bottom: 0;
@@ -143,11 +156,15 @@ h4.great {
   font-weight: 200;
   text-align: right;
   width: 188px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .price-form label {
   font-weight: 200;
-  font-size: 21px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .ui-slider-range-min {
@@ -165,7 +182,9 @@ hr.style {
 
 .control-label {
   color: #333333;
-  font-size: 24px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+
 }
 #amount-label, #interests, #total-amount  {
   margin: 0;
