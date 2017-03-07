@@ -14,7 +14,7 @@ $(document).ready(function() {
   $("#slider2").slider({
       animate: true,
       value:0,
-      min: 5,
+      min: 0,
       max: 21,
       step: 1,
       slide: function(event, ui) {

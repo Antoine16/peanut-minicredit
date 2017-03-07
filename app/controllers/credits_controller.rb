@@ -30,11 +30,11 @@ class CreditsController < ApplicationController
       customer.account_balance = @credit.amount_cents
       customer.save
     end
-
+    @credit.save
     rescue Stripe::CardError => e
         flash[:error] = e.message
         redirect_to new_user_credit_path
-    @credit.save
+
   end
 
   private
