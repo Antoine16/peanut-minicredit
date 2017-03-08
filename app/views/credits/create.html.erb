@@ -7,3 +7,6 @@
     <h3> Pour rappel, il sera disponible dans 24h!</h3>
     <h3> Nous prélèverons son remboursement de <%= @credit.total_amount %> € le <%= @credit.refund_at.strftime("%d/%m/%Y")%></h3>
   </div>
+
+<%= link_to "Voir mes crédits", credits_path, class: "btn btn-primary btn-sm" %>
+<%= link_to "Retour Accueil", root_path, class: "btn btn-primary btn-sm" %>
