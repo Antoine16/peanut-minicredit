@@ -7,9 +7,8 @@ body {
     margin-bottom: 50px;
     max-width: 400px;
     padding: 10px 20px;
-    background: #f4f7f8;
+    background: rgba(255,255,255,.8);
     margin: 10px auto;
-    background: #f4f7f8;
     border-radius: 8px;
     font-family: 'Roboto', sans-serif;
 }
@@ -110,3 +109,15 @@ body {
   margin-top: 0px;
   padding: 100px;
 }
+
+.banner-signup {
+  color: white;
+  text-align: center;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+
+
+}
+
+
+
