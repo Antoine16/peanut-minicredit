@@ -14,6 +14,11 @@
         <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
       <% end %>
 
+       <!-- Button loan) -->
+      <%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button-give btn", id: "CTC" do %>
+        <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
+      <% end %>
+
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 

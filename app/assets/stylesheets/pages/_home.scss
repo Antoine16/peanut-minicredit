@@ -54,6 +54,8 @@ p{
 }
 
 /* 4 étapes */
+
+
 .container {
     margin-top: -60px;
     padding-right: 15px;
@@ -61,6 +63,7 @@ p{
     margin-right: auto;
     margin-left: auto;
 }
+
 
 .peanutstep {
     padding: 0 10px 0 10px;
@@ -81,6 +84,7 @@ p{
   color: white;
   padding: 20px;
   background-color: $blue;
+  padding: 50px;
 }
 
 .benefits {
@@ -104,6 +108,14 @@ p{
 }
 
 
+/* FAQ */
+.faq {
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
+
+
 /*  flèche qui sautille */
 .arrow {
   position: fixed;
@@ -123,7 +135,12 @@ p{
 
 
 .icon-requisites img {
-  width: 90px;
+  width: 80px;
+
+}
+
+.title-requisites {
+  color: white;
 }
 
 .bloc-requieres {
@@ -131,6 +148,12 @@ p{
 
 }
 .text-requieres {
+}
+
+.need {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 
 
