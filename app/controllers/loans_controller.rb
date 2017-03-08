@@ -13,7 +13,7 @@ class LoansController < ApplicationController
   end
 
   def create
-    @loans = Loan.new(loan_params)
+    @loan = Loan.new(loan_params)
   end
 
  def simul
