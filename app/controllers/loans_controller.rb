@@ -14,7 +14,7 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new
     @loan.roi = set_roi
-    @loan.capital = gs[:capital]
+    @loan.capital = loan_params[:capital]
     @loan.user = current_user
     if @loan.save
       redirect_to loans_path
@@ -34,11 +34,11 @@ class LoansController < ApplicationController
   end
 
   def set_roi
-    if params[:roi] == "Securité"
+    if loan_params[:roi] == "Sécurité"
       0.03
-    elsif params[:roi] == "Tranquilité"
+    elsif loan_params[:roi] == "Tranquilité"
       0.06
-    elsif params[:roi] == "Dynamique"
+    elsif loan_params[:roi] == "Dynamique"
       0.09
     end
   end

@@ -48,12 +48,15 @@ SimpleForm.setup do |config|
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
 
+
+
     ## full_messages_for
     # If you want to display the full error message for the attribute, you can
     # use the component :full_error, like:
     #
     # b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
+
 
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
@@ -166,4 +169,5 @@ SimpleForm.setup do |config|
 
   # Defines which i18n scope will be used in Simple Form.
   # config.i18n_scope = 'simple_form'
+
 end
