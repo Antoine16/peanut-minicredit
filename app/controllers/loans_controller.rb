@@ -25,6 +25,9 @@ class LoansController < ApplicationController
   @year3 = @year2 * (1 + @loan.roi)
   @year4 = @year3 * (1 + @loan.roi)
   @year5 = @year4 * (1 + @loan.roi)
+  respond_to do |format|
+    format.js  {}
+  end
 end
 
   private
