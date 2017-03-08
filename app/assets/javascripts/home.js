@@ -9,4 +9,18 @@ $(document).ready(function(){
           $(".arrow").show();
       }
   });
+
+  $('.onoffswitch-checkbox').click(function(){
+    if ($('.items-borrow ').hasClass("hidden")) {
+
+      $('.items-borrow ').removeClass("hidden");
+      $('.items-give ').addClass("hidden");
+
+    }else{
+      $('.items-give').removeClass("hidden");
+      $('.items-borrow  ').addClass("hidden");
+    }
+  });
 });
+
+

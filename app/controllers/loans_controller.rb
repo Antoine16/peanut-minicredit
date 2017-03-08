@@ -21,6 +21,7 @@ class LoansController < ApplicationController
     else
       render :new
     end
+
   end
 
   private

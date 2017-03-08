@@ -1,6 +1,46 @@
-<h1>Loans#index</h1>
-<p>Find me in app/views/loans/index.html.erb</p>
 
-<% @loans.each do |loan| %>
-  <%= loan.capital + loan.capital * loan.roi%>
-<% end %>
+<br><br><br><br>
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-1">
+    <h1>Bonjour<strong> <%= current_user.first_name.capitalize %> </strong></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-1">
+    <ul class="list-inline">
+      <li>Votre formule<strong> SECURITE </strong></li>
+      <li class="btn btn-primary"> Modifier </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <ul class="list-inline">
+    <li class="col-md-4 col-md-offset-1">
+      <div class="card"></div>
+      <div class="card-capital-label" >Capital Peanut en cours</div>
+      <div class="card-capital-value">3.708€</div>
+      <div class="card-interest-label">Dont intérêts engrangés</div>
+      <div class="card-interest-value">708€</div>
+    </li>
+    <li class="btn btn-primary"> Immobiliser votre capital </li>
+  </ul>
+</div>
+
+<div class="row">
+  <ul class="list-inline">
+    <li class="col-md-4 col-md-offset-1">
+      <div class="card"></div>
+      <div class="card-credits-label" >Capital engagé sur crédits</div>
+      <div class="card-credits-value">1.682€</div>
+      <div class="card-refundat-label">Date du dernier remboursement</div>
+      <div class="card-refundat-value">25/03/2017</div>
+    </li>
+  </ul>
+</div>
+
+
+
+
