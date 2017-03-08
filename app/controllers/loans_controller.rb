@@ -9,26 +9,19 @@ class LoansController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-    @loans = Loan.new(loan_params)
+    @loan = Loan.new
+    @loan.roi = set_roi
+    @loan.capital = gs[:capital]
+    @loan.user = current_user
+    if @loan.save
+      redirect_to loans_path
+    else
+      render :new
+    end
   end
-
- def simul
-  @loan = Loan.new
-  @loan.capital = loan_params[:capital]
-  @loan.roi = loan_params[:roi]
-  @year1 = @loan.capital * (1 + @loan.roi)
-  @year2 = @year1 * (1 + @loan.roi)
-  @year3 = @year2 * (1 + @loan.roi)
-  @year4 = @year3 * (1 + @loan.roi)
-  @year5 = @year4 * (1 + @loan.roi)
-  respond_to do |format|
-    format.js  {}
-  end
-end
 
   private
 
@@ -38,5 +31,15 @@ end
 
   def set_loan
     @loan = Loan.new
+  end
+
+  def set_roi
+    if params[:roi] == "Securité"
+      0.03
+    elsif params[:roi] == "Tranquilité"
+      0.06
+    elsif params[:roi] == "Dynamique"
+      0.09
+    end
   end
 end

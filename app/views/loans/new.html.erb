@@ -1,6 +1,3 @@
-<h1>Loans#new</h1>
-<p>Find me in app/views/loans/new.html.erb</p>
-
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <h1 >Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
@@ -12,46 +9,55 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6 col-sm-offset-3">
     <div class="parent">
       <div class="form-style-5">
-        <%= simple_form_for @loan, url: '/simul', remote: true, method: :get do |f| %>
+        <%= simple_form_for @loan do |f| %>
           <%= f.error_notification %>
           <%= f.input :capital, label: "Entrez votre montant:" %>
-          <%= f.input :roi, label: "Entrez votre taux:" %>
-          <%= f.button :submit %>
+          <table>
+            <thead>
+              <tr>
+                <th>Formule</th>
+                <th>Taux</th>
+                <th>Risque</th>
+                <th>Revenu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Securité</td>
+                <td>3%</td>
+                <td>faible</td>
+                <td id="sécurité"></td>
+              </tr>
+               <tr>
+                <td>Tranquilité</td>
+                <td>6%</td>
+                <td>modéré</td>
+                <td id="tranquilité"></td>
+              </tr>
+               <tr>
+                <td>Dynamique</td>
+                <td>9%</td>
+                <td>important</td>
+                <td id="dynamique"></td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+          <%= f.input :roi, as: :radio_buttons, collection: [ "Sécurité", "Tranquilité", "Dynamique" ], label: "Choisissez une formule:" %>
+          <div class="call">
+          <% if user_signed_in?%>
+            <%= f.submit class: "navbar-wagon-item subscribe-button btn" do %>
+              <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Souscrire ce prêt") %>
+            <% end %>
+          <% else %>
+              <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
+          <% end %>
+          </div>
         <% end %>
       </div>
-    </div>
-  </div>
-  <div class="col-sm-1">
-    <div >
-      <span>Capital après 1 an: </span>
-      <p id="year1" ></p>
-    </div>
-  </div>
-  <div class="col-sm-1">
-    <div >
-      <span>Capital après 2 ans: </span>
-      <p id="year2" ></p>
-    </div>
-  </div>
-  <div class="col-sm-1">
-    <div >
-      <span>Capital après 3 ans: </span>
-      <p id="year3" ></p>
-    </div>
-  </div>
-  <div class="col-sm-1">
-    <div >
-      <span>Capital après 4 ans: </span>
-      <p id="year4" ></p>
-    </div>
-  </div>
-  <div class="col-sm-1">
-    <div >
-      <span>Capital après 5 ans: </span>
-      <p id="year5" ></p>
     </div>
   </div>
 </div>
