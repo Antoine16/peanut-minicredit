@@ -1,16 +1,28 @@
-<div class="wrapper margin-clear">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4">
-        <h1> Merci d'avoir choisi Peanut, <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
-      </div>
-      <div class="col-sm-4 col-sm-offset-4">
-        <h2> Votre crédit est en route!</h2>
-        <h3> Pour rappel, il sera disponible dans 24h!</h3>
-        <h3> Nous prélèverons son remboursement de <%= @credit.total_amount %> € le <%= @credit.refund_at.strftime("%d/%m/%Y")%></h3>
+
+  <div class="wrapper">
+    <div class="container">
+      <div class="row margin-clear">
+        <div class="col-sm-10 col-sm-offset-1 box">
+          <h1 class="padded-left text-white"> Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
+            <div class="row">
+              <div class="col-sm-12">
+                <div style="background-color: white; padding-top: 1px; padding-bottom: 15px; padding-left: 25PX; border-radius: 8px;">
+                  <h1> Merci d'avoir choisi Peanut, <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
+                  <h2> Votre crédit est en route!</h2>
+                  <h3> Pour rappel, il sera disponible dans 24h!</h3>
+                  <h3> Nous prélèverons son remboursement de <%= @credit.total_amount %> € le <%= @credit.refund_at.strftime("%d/%m/%Y")%>
+                  </h3>
+                  <div class="link_credit">
+                    <%= link_to "Voir mes crédits", credits_path, class: "btn btn-primary btn-sm" %>
+                    <%= link_to "Retour Accueil", root_path, class: "btn btn-primary btn-sm" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
 
-<%= link_to "Voir mes crédits", credits_path, class: "btn btn-primary btn-sm" %>
-<%= link_to "Retour Accueil", root_path, class: "btn btn-primary btn-sm" %>
+
+
