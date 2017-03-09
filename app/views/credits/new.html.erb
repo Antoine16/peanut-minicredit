@@ -1,36 +1,43 @@
-<br><br><br><br>
-<br><br><br><br>
-
-  <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-  <% end %>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
 <div class="wrapper">
   <div class="container">
-    <h1> Bonjour <strong><%= current_user.first_name.capitalize %></strong> </h1>
-    <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
-    <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
-    <h3> Et son remboursement de <%= @credit.total_amount %> € sera directement prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
-    <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
-    <%= form_tag credits_path do %>
-      <article>
-        <% if flash[:error].present? %>
-          <div id="error_explanation">
-            <p><%= flash[:error] %></p>
-          </div>
-        <% end %>
-      </article>
+    <div class="row margin-clear">
+      <div class="col-sm-10 col-sm-offset-1 box">
+        <h1 class="padded-left text-white"> Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
+          <div class="row">
+            <div class="col-sm-12">
+              <div style="background-color: white; padding-top: 1px; padding-bottom: 15px; padding-left: 25PX; border-radius: 8px;">
+                <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
+                <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
+                <h3> Le remboursement de <%= @credit.total_amount %> € sera prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
+                <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
+                  <%= form_tag credits_path do %>
+                    <article>
+                      <% if flash[:error].present? %>
+                        <div id="error_explanation">
+                          <p><%= flash[:error] %></p>
+                        </div>
+                      <% end %>
+                    </article>
 
-      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
-              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="informations carte à créditer"
-              data-name="Peanut"
-              data-email="<%= current_user.email %>"
-              data-panel-label="Créditer ma carte"
-              data-label="Obtenir mon crédit"
-              data-currency="EUR"></script>
-    <% end %>
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
+                            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                            data-description="informations carte à créditer"
+                            data-name="Peanut"
+                            data-email="<%= current_user.email %>"
+                            data-panel-label="Créditer ma carte"
+                            data-label="Obtenir mon crédit"
+                            data-currency="EUR"></script>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
   </div>
 
 
