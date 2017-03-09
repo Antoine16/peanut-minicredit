@@ -7,8 +7,8 @@ h1 {
 
 h1, h2, h3, h5, h6 {
     font-family: 'Roboto', sans-serif;
-    color: #333333;
 }
+
 
 h4 {
   color: $blue;
@@ -54,12 +54,31 @@ p{
 }
 
 /* 4 étapes */
+
+.content {
+  opacity: 1;
+  transition: opacity 3s linear;
+}
+
+.disabled {
+  opacity: 0;
+  height: 0;
+}
+
 .container {
+
     margin-top: -60px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+.titlesteph2 {
+  padding-top: 30px;
+}
+.items-give {
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .peanutstep {
@@ -77,11 +96,7 @@ p{
 
 /* vert requieres */
 
-#home-requisites {
-  color: white;
-  padding: 20px;
-  background-color: $blue;
-}
+
 
 .benefits {
   padding-top: 240px;
@@ -121,6 +136,14 @@ p{
   @include animation(bounce 10s infinite);
 }
 
+/*requieres */
+
+#home-requisites {
+
+  color: white;
+  padding: 50px;
+  background-color: $blue;
+}
 
 .icon-requisites img {
   width: 90px;
@@ -132,7 +155,20 @@ p{
 }
 .text-requieres {
 }
+.need {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
 
+.flag img {
+  height: 90px;
+}
+
+.faq {
+  padding: 50px;
+  padding-bottom: 120px;
+
+}
 
 /* bouton switch */
 
@@ -185,4 +221,10 @@ p{
     right: 0px;
 }
 
+.peanutstep h1, h2, h3 {
+  color: black;
+}
 
+.four-steps h4 {
+  color: $green;
+}
