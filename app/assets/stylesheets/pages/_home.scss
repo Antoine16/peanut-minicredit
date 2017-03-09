@@ -53,14 +53,15 @@ p{
 
 /* 4 étapes */
 
-.container {
+// .container {
 
-    margin-top: -60px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+//     margin-top: -60px;
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
 .titlesteph2 {
   padding-top: 30px;
 }
@@ -73,6 +74,7 @@ p{
 .peanutstep {
     padding: 0 10px 0 10px;
 }
+
 .titlestep {
   padding-top: 15px;
   color: $green;
@@ -88,7 +90,6 @@ p{
 
 #home-requisites {
   color: white;
-  padding: 20px;
   background-color: $blue;
   padding: 50px;
 }
@@ -119,6 +120,7 @@ p{
 .faq {
   margin-top: 35px;
   margin-bottom: 30px;
+  padding: 50px;
 }
 
 
@@ -174,9 +176,6 @@ p{
   height: 90px;
 }
 
-.faq {
-  padding: 50px;
-}
 
 .need {
   color: white;
@@ -247,6 +246,19 @@ p{
 .text-requieres h2 {
   color: white;
 }
- .features {
-   padding-bottom: 120px;
- }
+
+.features {
+  padding-bottom: 120px;
+  opacity: 1;
+  transition: opacity 1s linear;
+  height: auto;
+}
+
+.disabled {
+  opacity: 0;
+  height: 0;
+}
+
+.slide-closed {
+  display: none;
+}
