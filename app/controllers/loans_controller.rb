@@ -1,9 +1,11 @@
 class LoansController < ApplicationController
   before_action :set_loan, only: [:new]
+  before_action :capital_total, only: [:index, :cash_out]
+  skip_before_action :authenticate_user!, only: [ :new ]
 
   def index
     @loans = Loan.all
-    #@plan = loan_params[:roi]
+    @loan = Loan.new
   end
 
   def show
@@ -22,7 +24,19 @@ class LoansController < ApplicationController
     else
       render :new
     end
+  end
 
+  def cash_out
+    @sum_after_cash_out = @sum.to_i - cashout_params[:retrait].to_i
+    respond_to do |format|
+      format.js  {}
+    end
+  end
+
+  def freeze
+    respond_to do |format|
+      format.js  {}
+    end
   end
 
   private
@@ -44,4 +58,18 @@ class LoansController < ApplicationController
       0.09
     end
   end
+
+  def cashout_params
+    params.require(:loan).permit(:retrait)
+  end
+
+  def capital_total
+    @loans = Loan.all
+    @sum = 0
+    @loans.each do |loan|
+      @sum += loan.capital
+      @sum
+    end
+  end
+
 end
