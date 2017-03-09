@@ -1,5 +1,5 @@
 .card {
-  height: 130px;
+  height: 200px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
@@ -70,4 +70,16 @@
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+
+.card-last-loan {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+
+.card-last-loan-value {
+  position: absolute;
+  top: 50px;
+  right: 10px;
 }

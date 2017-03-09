@@ -1,3 +1,4 @@
+<br><br><br><br>
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <h1 class="padded-hidden-behind-nav">Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
@@ -21,7 +22,7 @@
                 <th>Formule</th>
                 <th>Taux</th>
                 <th>Risque</th>
-                <th>Revenu</th>
+                <th>Revenu Annuel</th>
               </tr>
             </thead>
             <tbody>
@@ -35,7 +36,7 @@
                 </td>
                 <td>Securité</td>
                 <td>3%</td>
-                <td>faible</td>
+                <td>Faible</td>
                 <td id="sécurité"></td>
               </tr>
                <tr>
@@ -48,7 +49,7 @@
                 </td>
                 <td>Tranquilité</td>
                 <td>6%</td>
-                <td>modéré</td>
+                <td>Modéré</td>
                 <td id="tranquilité"></td>
               </tr>
                <tr>
@@ -61,7 +62,7 @@
                 </td>
                 <td>Dynamique</td>
                 <td>9%</td>
-                <td>important</td>
+                <td>Important</td>
                 <td id="dynamique"></td>
               </tr>
             </tbody>
@@ -74,6 +75,27 @@
               <% end %>
             <% else %>
                 <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
+          <div class="call">
+          <% if user_signed_in?%>
+            <%= form_tag loans_path do %>
+              <article>
+                <% if flash[:error].present? %>
+                  <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                  </div>
+                <% end %>
+              </article>
+
+              <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
+                      data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                      data-description="Carte à débiter"
+                      data-name="Peanut"
+                      data-email="<%= current_user.email %>"
+                      data-panel-label="Prêter mon argent"
+                      data-label="Prêter mon argent"
+                      data-currency="EUR"></script>
+
             <% end %>
             </div>
         <% end %>
