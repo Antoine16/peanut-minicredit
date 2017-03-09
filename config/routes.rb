@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :credits, only: [ :index, :new, :create ]
   get '/sim' => 'pages#sim'
   get '/simul' => 'loans#simul'
-
+  post 'cash_out' => 'loans#cash_out'
+  post 'freeze' => 'loans#freeze'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

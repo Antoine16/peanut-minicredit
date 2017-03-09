@@ -14,7 +14,7 @@ $(document).ready(function() {
   $("#slider2").slider({
       animate: true,
       value:0,
-      min: 1,
+      min: 5,
       max: 21,
       step: 1,
       slide: function(event, ui) {
@@ -24,7 +24,7 @@ $(document).ready(function() {
 
   //Added, set initial value.
   $("#amount").val(50);
-  $("#duration").val(1);
+  $("#duration").val(5);
   $("#amount-label").text(0);
   $("#duration-label").text(0);
 
