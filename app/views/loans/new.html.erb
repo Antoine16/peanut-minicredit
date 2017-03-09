@@ -1,7 +1,7 @@
 <br><br><br><br>
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h1 >Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
+    <h1 class="padded-hidden-behind-nav">Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
     <h3>
       Démarrez votre simulation. Renseignez le montant que vous souhaitez investir et le type de rendement recherché.
     </h3>
@@ -15,9 +15,10 @@
         <%= simple_form_for @loan do |f| %>
           <%= f.error_notification %>
           <%= f.input :capital, label: "Entrez votre montant:" %>
-          <table class="table">
+          <table class="table table-loan">
             <thead>
               <tr>
+                <th></th>
                 <th>Formule</th>
                 <th>Taux</th>
                 <th>Risque</th>
@@ -26,18 +27,39 @@
             </thead>
             <tbody>
               <tr>
+                <td>
+                  <span class="radio">
+                    <label for="loan_roi_scurit">
+                      <input class="radio_buttons optional" type="radio" value="Sécurité" name="loan[roi]" id="loan_roi_scurit" />
+                    </label>
+                  </span>
+                </td>
                 <td>Securité</td>
                 <td>3%</td>
                 <td>Faible</td>
                 <td id="sécurité"></td>
               </tr>
                <tr>
+                <td>
+                  <span class="radio">
+                    <label for="loan_roi_tranquilit">
+                      <input class="radio_buttons optional" type="radio" value="Tranquilité" name="loan[roi]" id="loan_roi_tranquilit" />
+                    </label>
+                  </span>
+                </td>
                 <td>Tranquilité</td>
                 <td>6%</td>
                 <td>Modéré</td>
                 <td id="tranquilité"></td>
               </tr>
                <tr>
+                <td>
+                  <span class="radio">
+                    <label for="loan_roi_dynamique">
+                      <input class="radio_buttons optional" type="radio" value="Dynamique" name="loan[roi]" id="loan_roi_dynamique" />
+                    </label>
+                  </span>
+                </td>
                 <td>Dynamique</td>
                 <td>9%</td>
                 <td>Important</td>
@@ -46,8 +68,13 @@
             </tbody>
           </table>
           <div>
-          <%= f.input :roi, as: :radio_buttons, collection: [ "Sécurité", "Tranquilité", "Dynamique" ], label: "Choisissez une formule:" %>
-
+            <div class="call">
+            <% if user_signed_in?%>
+              <%= f.submit "preter mon argent", class: "navbar-wagon-item subscribe-button btn" do %>
+                <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Souscrire ce prêt") %>
+              <% end %>
+            <% else %>
+                <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
           <div class="call">
           <% if user_signed_in?%>
             <%= form_tag loans_path do %>
@@ -68,11 +95,9 @@
                       data-panel-label="Prêter mon argent"
                       data-label="Prêter mon argent"
                       data-currency="EUR"></script>
+
             <% end %>
-          <% else %>
-              <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
-          <% end %>
-          </div>
+            </div>
         <% end %>
       </div>
     </div>
