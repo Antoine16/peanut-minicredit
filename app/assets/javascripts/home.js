@@ -11,16 +11,29 @@ $(document).ready(function(){
   });
 
   $('.onoffswitch-checkbox').click(function(){
-    if ($('.items-borrow ').hasClass("hidden")) {
-
-      $('.items-borrow ').removeClass("hidden");
-      $('.items-give ').addClass("hidden");
-
+    if ($('.items-give ').hasClass("hide")) {
+      // $('.items-give').fadeIn(100);
+      // $(".items-borrow").fadeOut(100, "linear");
+      $('.items-borrow ').slideDown();
+      $('.items-give ').slideUp();
+      $('.items-give ').removeClass("hide");
+      $('.items-borrow ').addClass("hide");
     }else{
-      $('.items-give').removeClass("hidden");
-      $('.items-borrow  ').addClass("hidden");
+      //  $('.items-borrow').fadeIn(100);
+      // $(".items-give").fadeOut(100, "linear");
+      $('.items-give ').slideDown();
+      $('.items-borrow ').slideUp();
+      $('.items-borrow ').removeClass("hide");
+      $('.items-give ').addClass("hide");
     }
   });
+
+  // $('.onoffswitch-checkbox').click(function(){
+  //   $('.items-give ').toggleClass("hidden");
+  //   $('.items-give ').toggleClass("hidden");
+  // });
+
+
 });
 
 
