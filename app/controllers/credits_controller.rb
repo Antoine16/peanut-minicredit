@@ -25,14 +25,23 @@ class CreditsController < ApplicationController
       current_user.stripeid = customer.id
       current_user.save
     else
-      customer = Stripe::Customer.retrieve(current_user.stripeid)
-      customer.account_balance = @credit.amount_cents
-      customer.save
+      # S'il existe une collection de crédits à l'état pending
+       if @credit.user.credits.where(state: "pending").any?
+        flash[:notice] = "Vous avez déja un crédit en cours"
+        redirect_to root_path
+        #redirect_to new_credit_path
+      # S'il n'y en a qu'un
+        else
+        customer = Stripe::Customer.retrieve(current_user.stripeid)
+        customer.account_balance = @credit.amount_cents
+        customer.save
+      end
+      @credit.save
+
     end
-    @credit.save
     rescue Stripe::CardError => e
-        flash[:error] = e.message
-        redirect_to new_credit_path
+    flash[:error] = e.message
+    redirect_to new_credit_path
   end
 
   private
