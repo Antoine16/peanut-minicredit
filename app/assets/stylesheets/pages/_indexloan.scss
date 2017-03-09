@@ -4,7 +4,7 @@
   background-size: cover !important;
   color: white;
   position: relative;
-  background-color: #F74A72;
+  background-color: #0F3B49;
   border-radius: 8px;
   display: flex;
 }
@@ -82,4 +82,21 @@
   position: absolute;
   top: 50px;
   right: 10px;
+}
+
+#freezing {
+  position: absolute;
+  right: 110px;
+  top: 90px;
+}
+
+#cashing {
+  position: absolute;
+  right: 10px;
+  top: 90px;
+}
+
+.modal {
+  color: black;
+  text-shadow: none;
 }
