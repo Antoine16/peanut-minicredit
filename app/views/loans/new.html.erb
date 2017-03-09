@@ -1,63 +1,98 @@
-<div class="row">
-  <div class="col-sm-8 col-sm-offset-2">
-    <h1 >Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
-    <h3>
-      Démarrez votre simulation. Renseignez le montant que vous souhaitez investir et le type de rendement recherché.
-    </h3>
-    <h2> Les membres de Peanut vous remercient d'avance pour votre confiance!</h2>
+<div class="col-sm-4 col-sm-offset-4 box padded-hidden-behind-nav">
+  <div class="row">
+    <div class="col-sm-12 padded-left">
+      <h1 class="text-white">Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
+      <h3 class="text-white">
+        Démarrez votre simulation.
+      </h3>
+    </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <div class="parent">
-      <div class="form-style-5">
-        <%= simple_form_for @loan do |f| %>
-          <%= f.error_notification %>
-          <%= f.input :capital, label: "Entrez votre montant:" %>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Formule</th>
-                <th>Taux</th>
-                <th>Risque</th>
-                <th>Revenu</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Securité</td>
-                <td>3%</td>
-                <td>faible</td>
-                <td id="sécurité"></td>
-              </tr>
-               <tr>
-                <td>Tranquilité</td>
-                <td>6%</td>
-                <td>modéré</td>
-                <td id="tranquilité"></td>
-              </tr>
-               <tr>
-                <td>Dynamique</td>
-                <td>9%</td>
-                <td>important</td>
-                <td id="dynamique"></td>
-              </tr>
-            </tbody>
-          </table>
-          <div>
-          <%= f.input :roi, as: :radio_buttons, collection: [ "Sécurité", "Tranquilité", "Dynamique" ], label: "Choisissez une formule:" %>
-
-          <div class="call">
-          <% if user_signed_in?%>
-            <%= f.submit "preter mon argent", class: "navbar-wagon-item subscribe-button btn" do %>
-              <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Souscrire ce prêt") %>
-            <% end %>
-          <% else %>
-              <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="parent">
+        <div class="form-style-5">
+          <%= simple_form_for @loan do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :capital, label: "Entrez votre montant:" %>
+            <table class="table table-loan">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Formule</th>
+                  <th>Taux</th>
+                  <th>Risque</th>
+                  <th>Revenu Annuel</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="radio">
+                      <label for="loan_roi_scurit">
+                        <input class="radio_buttons optional" type="radio" value="Sécurité" name="loan[roi]" id="loan_roi_scurit" />
+                      </label>
+                    </span>
+                  </td>
+                  <td>Securité</td>
+                  <td>3%</td>
+                  <td>Faible</td>
+                  <td id="sécurité"></td>
+                </tr>
+                 <tr>
+                  <td>
+                    <span class="radio">
+                      <label for="loan_roi_tranquilit">
+                        <input class="radio_buttons optional" type="radio" value="Tranquilité" name="loan[roi]" id="loan_roi_tranquilit" />
+                      </label>
+                    </span>
+                  </td>
+                  <td>Tranquilité</td>
+                  <td>6%</td>
+                  <td>Modéré</td>
+                  <td id="tranquilité"></td>
+                </tr>
+                 <tr>
+                  <td>
+                    <span class="radio">
+                      <label for="loan_roi_dynamique">
+                        <input class="radio_buttons optional" type="radio" value="Dynamique" name="loan[roi]" id="loan_roi_dynamique" />
+                      </label>
+                    </span>
+                  </td>
+                  <td>Dynamique</td>
+                  <td>9%</td>
+                  <td>Important</td>
+                  <td id="dynamique"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+            <div class="call">
+             <% if user_signed_in?%>
+               <%= form_tag loans_path do %>
+                 <article>
+                   <% if flash[:error].present? %>
+                     <div id="error_explanation">
+                       <p><%= flash[:error] %></p>
+                     </div>
+                   <% end %>
+                 </article>
+                 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                         data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png (6KB)'
+                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                         data-description="Carte à débiter"
+                         data-name="Peanut"
+                         data-email="<%= current_user.email %>"
+                         data-panel-label="Prêter mon argent"
+                         data-label="Prêter mon argent"
+                         data-currency="EUR"></script>
+               <% end %>
+             <% else %>
+                 <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
+             <% end %>
+            </div>
           <% end %>
-          </div>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>

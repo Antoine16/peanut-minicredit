@@ -3,6 +3,7 @@ class LoansController < ApplicationController
 
   def index
     @loans = Loan.all
+    #@plan = loan_params[:roi]
   end
 
   def show

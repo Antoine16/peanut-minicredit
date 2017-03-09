@@ -28,9 +28,7 @@ p{
 
 }
 
-.notice, .alert {
-  display: none;
-}
+
 
 .home-calculator-box-inner {
     border-radius: 8px;
@@ -55,16 +53,6 @@ p{
 
 /* 4 étapes */
 
-.content {
-  opacity: 1;
-  transition: opacity 3s linear;
-}
-
-.disabled {
-  opacity: 0;
-  height: 0;
-}
-
 .container {
 
     margin-top: -60px;
@@ -81,6 +69,7 @@ p{
   padding-left: 30px;
 }
 
+
 .peanutstep {
     padding: 0 10px 0 10px;
 }
@@ -96,6 +85,13 @@ p{
 
 /* vert requieres */
 
+
+#home-requisites {
+  color: white;
+  padding: 20px;
+  background-color: $blue;
+  padding: 50px;
+}
 
 
 .benefits {
@@ -117,6 +113,14 @@ p{
 .col-inner h2 {
   color: #FCD678;
 }
+
+
+/* FAQ */
+.faq {
+  margin-top: 35px;
+  margin-bottom: 30px;
+}
+
 
 
 /*  flèche qui sautille */
@@ -146,7 +150,12 @@ p{
 }
 
 .icon-requisites img {
-  width: 90px;
+  width: 80px;
+
+}
+
+.title-requisites {
+  color: white;
 }
 
 .bloc-requieres {
@@ -160,6 +169,7 @@ p{
   padding-bottom: 20px;
 }
 
+
 .flag img {
   height: 90px;
 }
@@ -167,6 +177,13 @@ p{
 .faq {
   padding: 50px;
 }
+
+.need {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
 
 /* bouton switch */
 
