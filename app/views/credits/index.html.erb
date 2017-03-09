@@ -1,49 +1,43 @@
 
-<br> <br><br>
 
-<div class="row">
-  <div class="col-sm-3 text-left">
-    <%= link_to "Retour Accueil", root_path, class: "btn btn-primary btn-sm" %>
-  </div>
-</div>
-  <div>
-    <h3>Voici votre profil <%= current_user.first_name.capitalize %></h3>
-  </div>
 
-  <div class="col-md-4">
-    <div class="titleprofil">
-      <h4> Vos informations peronnelles :</h4>
-    </div>
-    <div class="textprofil">
-      <li>
-      <strong>Nom :</strong> <%= current_user.last_name %>
-      </li>
-      <li>
-      <strong>Email :</strong> <%= current_user.email %>
-      </li>
-      <li>
-      <strong>Téléphone :</strong> <%= current_user.phone %>
-      </li>
-      <li>
-      <strong>Adresse :</strong> <%= current_user.address %>
-      </li>
-      <button type="button" class="btn btn-info">Modifier vos données</button>
+<div class="container ">
+  <div class="row margin-clear">
+    <div class="col-md-4 box">
+      <h3 class="text-white padded-left">Voici votre profil <%= current_user.first_name.capitalize %>:</h3>
+      <div>
+        <div style="background-color: rgba(250,250,250, 0.7); padding-top: 1px; padding-bottom: 15px; padding-left: 25PX; border-radius: 8px;">
+          <p style="text-align: left;"> Vos informations peronnelles :<p>
+            <ul style="margin: 0; padding-left: 0; list-style: none;">
+              <li>
+                <strong>Nom :</strong> <%= current_user.last_name %>
+              </li>
+              <li>
+                <strong>Email :</strong> <%= current_user.email %>
+              </li>
+              <li>
+                <strong>Téléphone :</strong> <%= current_user.phone %>
+              </li>
+              <li>
+                <strong>Adresse :</strong> <%= current_user.address %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-    </div>
-  </div>
-
-  <div class="col-md-8">
-    <div class="titleprofil">
-      <h4>Vos crédits :</h4>
-    </div>
-  <div class="wrapper-credit">
-<!-- ici mettre crédit pending -->
-    <div class="bloc-credit">
-      <% pendings = current_user.credits.where(state: "pending") %>
-      <% if pendings.any? %>
-        <% pendings.each do |credit| %>
+    <div class="col-md-7 col-md-offset-1 box">
+      <div>
+        <h3 class="padded-left text-white">Vos crédits:</h3>
+      </div>
+      <div style="list-style: none;">
+        <!-- ici mettre crédit pending -->
+        <div class="bloc-credit">
+          <% pendings = current_user.credits.where(state: "pending") %>
+          <% if pendings.any? %>
+          <% pendings.each do |credit| %>
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <ul>
                 <li>
                   Vous avez un crédit en cours.
@@ -59,25 +53,25 @@
                 </li>
               </ul>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <div class="peanut-pending">
-              <%= image_tag "peanut-stripe.png" %>
+                <%= image_tag "peanut-stripe.png" %>
               </div>
             </div>
           </div>
-        <% end %>
-      <% else %>
-        <li>
-        Vous n'avez pas de crédit en cours.
-        </li>
-      <% end %>
-    </div>
+          <% end %>
+          <% else %>
+          <li>
+            Vous n'avez pas de crédit en cours.
+          </li>
+          <% end %>
+        </div>
 
-  <!-- ici mettre crédit paid -->
-    <div class="bloc-credit">
-      <% paids = current_user.credits.where(state: "paid") %>
-      <% if paids.any? %>
-        <% paids.each do |credit| %>
+        <!-- ici mettre crédit paid -->
+        <div class="bloc-credit">
+          <% paids = current_user.credits.where(state: "paid") %>
+          <% if paids.any? %>
+          <% paids.each do |credit| %>
           <div class="row">
             <div class="col-sm-6">
               <ul>
@@ -96,16 +90,19 @@
 
               </ul>
             </div>
-          <div class="col-sm-6">
-            <%= image_tag "peanut-credit-over.png" %>
-           </div>
+            <div class="col-sm-6">
+              <%= image_tag "peanut-credit-over.png" %>
+            </div>
           </div>
-        <% end %>
-      <% else %>
-        <li>
-        Aucun crédit dans votre historique.
-        </li>
-      <% end %>
+          <% end %>
+          <% else %>
+          <li>
+            Aucun crédit dans votre historique.
+          </li>
+          <% end %>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
-</div>
+
