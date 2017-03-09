@@ -64,11 +64,15 @@ class LoansController < ApplicationController
   end
 
   def capital_total
-    @loans = Loan.all
     @sum = 0
+    if current_user.loans.last == nil
+      @sum = 0
+    else
+    @loans = Loan.all.where(user: current_user)
     @loans.each do |loan|
       @sum += loan.capital
       @sum
+      end
     end
   end
 
