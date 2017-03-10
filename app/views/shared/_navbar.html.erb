@@ -33,8 +33,14 @@
               <% end %>
             </li>
             <li>
-              <%= link_to loans_path do %>
+              <% if current_user.loans.last.nil? %>
+                <%= link_to new_loan_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Prêteur") %>
+                <% end %>
+              <% else %>
+                <%= link_to loans_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Prêteur") %>
+                <% end %>
               <% end %>
             </li>
             <li>
