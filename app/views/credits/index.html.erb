@@ -4,37 +4,36 @@
 <div class="container ">
   <div class="row margin-clear">
     <div class="col-md-4 box">
-      <h3 class="text-white padded-left">Voici votre profil <%= current_user.first_name.capitalize %>:</h3>
+      <h3 class="text-white padded-left">Votre profil:</h3>
       <div>
         <div style="background-color: rgba(250,250,250, 0.8); padding: 1px 25px 15px 25px; border-radius: 8px;">
-          <p style="text-align: left;"> Vos informations peronnelles :<p>
-            <ul style="margin: 0; padding-left: 0; list-style: none;">
-              <li>
-                <strong>Nom :</strong> <%= current_user.last_name %>
-              </li>
-              <li>
-                <strong>Email :</strong> <%= current_user.email %>
-              </li>
-              <li>
-                <strong>Téléphone :</strong> <%= current_user.phone %>
-              </li>
-              <li>
-                <strong>Adresse :</strong> <%= current_user.address %>
-              </li>
-              <hr>
-              <li>
-                <strong>Note:</strong> <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                  <% 4.times do %>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                  <% end %>
-              </li>
-              <li><strong>Montant max. du crédit:</strong> 200 €</li>
-              <li><strong>Nombre max. de crédits simultanés:</strong> 1</li>
-              <li><strong>Taux d'emprunt:</strong> Primo emprunteur</li>
-            </ul>
-          </div>
+          <ul style="margin: 0; padding-left: 0; list-style: none;">
+            <li>
+              <strong>Nom :</strong> <%= current_user.last_name %>
+            </li>
+            <li>
+              <strong>Email :</strong> <%= current_user.email %>
+            </li>
+            <li>
+              <strong>Téléphone :</strong> <%= current_user.phone %>
+            </li>
+            <li>
+              <strong>Adresse :</strong> <%= current_user.address %>
+            </li>
+            <hr>
+            <li>
+              <strong>Note:</strong> <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <% 4.times do %>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+                <% end %>
+            </li>
+            <li><strong>Montant max. du crédit:</strong> 200 €</li>
+            <li><strong>Nombre max. de crédits simultanés:</strong> 1</li>
+            <li><strong>Taux d'emprunt:</strong> Primo emprunteur</li>
+          </ul>
         </div>
       </div>
+    </div>
 
     <div class="col-md-7 col-md-offset-1 box">
       <div>
