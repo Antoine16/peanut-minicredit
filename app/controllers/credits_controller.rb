@@ -25,6 +25,7 @@ class CreditsController < ApplicationController
       current_user.stripeid = customer.id
       current_user.save
       @credit.save
+      CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     else
       # S'il existe une collection de crédits à l'état pending
       if @credit.user.credits.where(state: "pending").any?
@@ -38,7 +39,7 @@ class CreditsController < ApplicationController
         customer.save
       end
     @credit.save
-
+    CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     end
     rescue Stripe::CardError => e
     flash[:error] = e.message
