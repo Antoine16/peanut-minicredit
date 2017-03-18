@@ -9,6 +9,10 @@ class CreditsController < ApplicationController
   end
 
   def new
+    if current_user.credits.where(state: "pending").any?
+      flash[:alert] = "Vous avez déja un crédit en cours"
+      redirect_to credits_path
+    end
   end
 
   def create
@@ -27,19 +31,11 @@ class CreditsController < ApplicationController
       @credit.save
       CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     else
-      # S'il existe une collection de crédits à l'état pending
-      if @credit.user.credits.where(state: "pending").any?
-        flash[:notice] = "Vous avez déja un crédit en cours"
-        redirect_to root_path
-        #redirect_to new_credit_path
-      # S'il n'y en a qu'un
-      else
-        customer = Stripe::Customer.retrieve(current_user.stripeid)
-        customer.account_balance = @credit.amount_cents
-        customer.save
-      end
-    @credit.save
-    CreditMailer.credit_confirmation(@credit, current_user).deliver_now
+      customer = Stripe::Customer.retrieve(current_user.stripeid)
+      customer.account_balance = @credit.amount_cents
+      customer.save
+      @credit.save
+      CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     end
     rescue Stripe::CardError => e
     flash[:error] = e.message
