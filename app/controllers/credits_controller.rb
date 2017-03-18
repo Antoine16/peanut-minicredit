@@ -9,10 +9,10 @@ class CreditsController < ApplicationController
   end
 
   def new
-    if current_user.credits.where(state: "pending").any?
-      flash[:alert] = "Vous avez déja un crédit en cours"
-      redirect_to credits_path
-    end
+    # if current_user.credits.where(state: "pending").any?
+    #   flash[:alert] = "Vous avez déja un crédit en cours"
+    #   redirect_to credits_path
+    # end
   end
 
   def create
