@@ -55,7 +55,8 @@
   <div class="call">
     <% if user_signed_in?%>
       <%= link_to new_credit_path, class: "navbar-wagon-item subscribe-button btn" do %>
-      <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Souscrire ce prêt") %>
+      <i class="fa fa-credit-card" aria-hidden="true"></i>
+      <%= t(".top_call_to_action", default: "Souscrire ce prêt") %>
       <% end %>
     <% else %>
       <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>

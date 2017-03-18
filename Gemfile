@@ -27,7 +27,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-
+  gem "letter_opener"
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
