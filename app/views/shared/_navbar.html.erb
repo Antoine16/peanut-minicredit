@@ -33,8 +33,14 @@
               <% end %>
             </li>
             <li>
-              <%= link_to loans_path do %>
+              <% if current_user.loans.last.nil? %>
+                <%= link_to new_loan_path do %>
                 <i class="fa fa-user"></i> <%= t(".profile", default: "Prêteur") %>
+                <% end %>
+              <% else %>
+                <%= link_to loans_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Prêteur") %>
+                <% end %>
               <% end %>
             </li>
             <li>
@@ -68,8 +74,8 @@
         <li><%= link_to t(".sign_in", default: "Créer mon compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <li><%= link_to t(".sign_in", default: "Mon compte"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
         <li><%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
-              <% end %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
+          <% end %>
       </ul>
     </div>
   </div>
