@@ -7,8 +7,8 @@ h1 {
 
 h1, h2, h3, h5, h6 {
     font-family: 'Roboto', sans-serif;
-    color: #333333;
 }
+
 
 h4 {
   color: $blue;
@@ -24,17 +24,17 @@ p{
   text-align: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
+  height: 100vh;
+
 }
 
-.notice, .alert {
-  display: none;
-}
+
 
 .home-calculator-box-inner {
     border-radius: 8px;
     background: rgba(15,59,73,0.6);
     margin-top: 100px;
-    margin-bottom: 50px;
+    /*margin-bottom: 50px; */
     padding: 2px;
 
 }
@@ -52,17 +52,34 @@ p{
 }
 
 /* 4 étapes */
-.container {
-    margin-top: -60px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+
+// .container {
+
+//     margin-top: -60px;
+//     padding-right: 15px;
+//     padding-left: 15px;
+//     margin-right: auto;
+//     margin-left: auto;
+// }
+
+.titlesteph2 {
+  padding-top: 30px;
 }
+.items-give {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 
 .peanutstep {
     padding: 0 10px 0 10px;
 }
+
+.titlestep {
+  padding-top: 15px;
+  color: $green;
+}
+
 
 .text-center {
     text-align: center;
@@ -70,11 +87,13 @@ p{
 
 /* vert requieres */
 
+
 #home-requisites {
   color: white;
-  padding: 20px;
   background-color: $blue;
+  padding: 50px;
 }
+
 
 .benefits {
   padding-top: 240px;
@@ -97,6 +116,15 @@ p{
 }
 
 
+/* FAQ */
+.faq {
+  margin-top: 35px;
+  margin-bottom: 30px;
+  padding: 50px;
+}
+
+
+
 /*  flèche qui sautille */
 .arrow {
   position: fixed;
@@ -114,9 +142,22 @@ p{
   @include animation(bounce 10s infinite);
 }
 
+/*requieres */
+
+#home-requisites {
+
+  color: white;
+  padding: 50px;
+  background-color: $blue;
+}
 
 .icon-requisites img {
-  width: 90px;
+  width: 80px;
+
+}
+
+.title-requisites {
+  color: white;
 }
 
 .bloc-requieres {
@@ -125,9 +166,99 @@ p{
 }
 .text-requieres {
 }
+.need {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+
+.flag img {
+  height: 90px;
+}
+
+
+.need {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
 
 
 /* bouton switch */
 
+.onoffswitch {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-left: 10px;
+    background-color: $blue;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-right: 10px;
+    background-color: $green;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
 
+.peanutstep h1, h2, h3 {
+  color: black;
+}
 
+.four-steps h4 {
+  color: $green;
+}
+
+.text-requieres h2 {
+  color: white;
+}
+
+.features {
+  padding-bottom: 120px;
+  opacity: 1;
+  transition: opacity 1s linear;
+  height: auto;
+}
+
+.disabled {
+  opacity: 0;
+  height: 0;
+}
+
+.slide-closed {
+  display: none;
+}

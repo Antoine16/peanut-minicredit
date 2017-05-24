@@ -10,44 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306091819) do
+ActiveRecord::Schema.define(version: 20170314113407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "credits", force: :cascade do |t|
-    t.integer  "amount_cents",       default: 0, null: false
-    t.integer  "interest_cents",     default: 0, null: false
+    t.integer  "amount_cents",       default: 0,         null: false
+    t.integer  "interest_cents",     default: 0,         null: false
     t.date     "refund_at"
     t.integer  "user_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "state"
-    t.integer  "total_amount_cents", default: 0, null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "total_amount_cents", default: 0,         null: false
+    t.string   "state",              default: "pending"
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
   end
 
+  create_table "loans", force: :cascade do |t|
+    t.integer  "capital_cents",         default: 0,     null: false
+    t.string   "amount_cents_currency", default: "EUR", null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.integer  "user_id"
+    t.float    "roi"
+    t.index ["user_id"], name: "index_loans_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "address"
     t.string   "phone"
     t.string   "stripeid"
+    t.boolean  "admin",                  default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   add_foreign_key "credits", "users"
+  add_foreign_key "loans", "users"
 end

@@ -24,17 +24,18 @@ class CreditsController < ApplicationController
           )
       current_user.stripeid = customer.id
       current_user.save
-
+      @credit.save
+      CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     else
       customer = Stripe::Customer.retrieve(current_user.stripeid)
       customer.account_balance = @credit.amount_cents
       customer.save
+      @credit.save
+      CreditMailer.credit_confirmation(@credit, current_user).deliver_now
     end
-
     rescue Stripe::CardError => e
-        flash[:error] = e.message
-        redirect_to new_user_credit_path
-    @credit.save
+    flash[:error] = e.message
+    redirect_to new_credit_path
   end
 
   private

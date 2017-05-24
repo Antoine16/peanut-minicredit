@@ -21,12 +21,13 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'faker'
 gem 'jquery-ui-rails'
-gem 'whenever', require: false
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-
+  gem "letter_opener"
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
