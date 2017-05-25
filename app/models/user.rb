@@ -5,13 +5,9 @@ class User < ApplicationRecord
 
   has_many :credits
   has_many :loans
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :rememberable, :trackable
 
-  validates :phone, presence: true
-  validates :address, presence: true
-  validates :last_name, presence: true
-  validates :first_name, presence: true
+  validates :email, presence: true
 
   def name
     email

@@ -2,7 +2,6 @@ class LoansController < ApplicationController
 
   before_action :set_loan, only: [:new]
   before_action :capital_total, only: [:index, :cash_out]
-  skip_before_action :authenticate_user!, only: [ :new ]
 
   def index
     @loans = Loan.all

@@ -9,12 +9,12 @@
     <div class="container">
       <div class="row margin-clear">
         <div class="col-sm-10 col-sm-offset-1 box">
-          <h1 class="padded-left text-white"><strong><%= current_user.first_name.capitalize %></strong> </h1>
+          <h1 class="padded-left text-white"><strong>blabla</strong> </h1>
             <div class="row">
               <div class="col-sm-12">
                 <div style="background-color: rgba(250,250,250,0.8); padding-top: 1px; padding-bottom: 15px; padding-left: 25PX; border-radius: 8px; text-align: left;">
                   <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
-                  <h3> Il sera disponible directement sur votre carte banquaire dans 24h!</h3>
+                  <h3> Plus que quelques clics et il sera disponible directement sur votre carte bancaire en 24h!</h3>
                   <h3> Le remboursement de <%= @credit.total_amount %> € sera prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
                   <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
                     <%= form_tag credits_path do %>
@@ -25,16 +25,7 @@
                           </div>
                         <% end %>
                       </article>
-
-                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                              data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
-                              data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                              data-description="informations carte à créditer"
-                              data-name="Peanut"
-                              data-email="<%= current_user.email %>"
-                              data-panel-label="Créditer ma carte"
-                              data-label="Obtenir mon crédit"
-                              data-currency="EUR"></script>
+                      <%= link_to "Obtenir ce crédit", new_user_session_path, class: "btn", id: "connect"%>
                     <% end %>
                 </div>
               </div>
@@ -42,9 +33,4 @@
         </div>
       </div>
     </div>
-
-
-
-     <!-- Le bouton Stripe -->
-
   </div>
