@@ -4,16 +4,9 @@
   <div class="col-sm-4 col-sm-offset-4 box margin-clear">
     <div class="row">
       <div class="col-sm-12 padded-left">
-        <% if user_signed_in? %>
-          <h1 class="text-white">Bonjour <strong><%= current_user.first_name.capitalize %>!</strong> </h1>
-          <h3 class="text-white">
-            Démarrez votre simulation.
-          </h3>
-        <% else %>
-          <h1 class="text-white">Merci de vouloir participer à l'aventure Peanut!</strong> </h1>
-          <h3 class="text-white">
-            Démarrez votre simulation.
-        <% end %>
+        <h1 class="text-white">Merci de vouloir participer à l'aventure Peanut!</strong> </h1>
+        <h3 class="text-white">
+        Démarrez votre simulation.
       </div>
     </div>
     <div class="row">
@@ -76,28 +69,16 @@
                 </tbody>
               </table>
               <div class="call">
-               <% if user_signed_in?%>
-                 <%= form_tag loans_path do %>
-                   <article>
-                     <% if flash[:error].present? %>
-                       <div id="error_explanation">
-                         <p><%= flash[:error] %></p>
-                       </div>
-                     <% end %>
-                   </article>
-                   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                           data-image='https://s13.postimg.org/ngsl9te87/peanut_stripe.png'
-                           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                           data-description="Carte à débiter"
-                           data-name="Peanut"
-                           data-email="<%= current_user.email %>"
-                           data-panel-label="Prêter mon argent"
-                           data-label="Prêter mon argent"
-                           data-currency="EUR"></script>
-                 <% end %>
-               <% else %>
-                   <%= link_to "Connectez vous pour souscrire", new_user_session_path, class: "btn", id: "connect"%>
-               <% end %>
+                <%= form_tag loans_path do %>
+                  <article>
+                    <% if flash[:error].present? %>
+                      <div id="error_explanation">
+                      <p><%= flash[:error] %></p>
+                      </div>
+                    <% end %>
+                  </article>
+                  <%= submit_tag "Investir votre argent", class: "btn", id: "connect"%>
+                <% end %>
               </div>
             <% end %>
           </div>
