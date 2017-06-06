@@ -5,13 +5,12 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
-
-  resources :loans, only: [ :index, :show, :new, :create ]
+  resources :loans, only: [ :new, :create ]
   resources :users
-  resources :credits, only: [ :index, :new, :create ]
+  resources :borrowers, only: [ :new, :create, :show ]
+  resources :loaners, only: [ :new, :create, :show ]
+  resources :credits, only: [ :new, :create ]
   get '/sim' => 'pages#sim'
   get '/simul' => 'loans#simul'
-  post 'cash_out' => 'loans#cash_out'
-  post 'freeze' => 'loans#freeze'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

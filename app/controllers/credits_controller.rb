@@ -1,10 +1,6 @@
 class CreditsController < ApplicationController
   before_action :set_credit, only: [:new, :create ]
 
-  def index
-    @credits = Credit.all
-  end
-
   def show
   end
 
@@ -12,8 +8,8 @@ class CreditsController < ApplicationController
   end
 
   def create
-    @credit.user = current_user
-    redirect_to new_credit_path
+    @credit.save
+    redirect_to new_borrower_path
   end
 
   private
@@ -29,6 +25,4 @@ class CreditsController < ApplicationController
   end
 
 end
-
-
 

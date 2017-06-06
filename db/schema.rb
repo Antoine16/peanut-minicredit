@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525115158) do
+ActiveRecord::Schema.define(version: 20170606143540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "borrowers", force: :cascade do |t|
+    t.string   "email"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "credits", force: :cascade do |t|
     t.integer  "amount_cents",       default: 0,         null: false
@@ -25,6 +32,13 @@ ActiveRecord::Schema.define(version: 20170525115158) do
     t.integer  "total_amount_cents", default: 0,         null: false
     t.string   "state",              default: "pending"
     t.index ["user_id"], name: "index_credits_on_user_id", using: :btree
+  end
+
+  create_table "loaners", force: :cascade do |t|
+    t.string   "email"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "loans", force: :cascade do |t|
