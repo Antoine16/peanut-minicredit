@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Bonjour, <%= @user.first_name.capitalize %>!</h1>
+    <h1>Bonjour</h1>
     <p>
       Merci d'avoir utilisé Peanut <br>
       Vous venez de souscrire un crédit, veuillez lire attentivement le récapitulatif ci-dessous.<br>
@@ -29,10 +29,6 @@
       </div>
     </div>
 
-    <p>
-      Pour consulter ces informations en ligne, rendez vous sur votre compte en suivant ce lien:
-      <%= link_to "Mes crédits", credits_url(@user) %>.
-    </p>
     <p>L'equipe Peanut</p>
     <%= image_tag 'peanut-couleur.png' %>
   </body>
