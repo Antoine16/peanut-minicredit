@@ -4,9 +4,9 @@
   <div class="col-sm-4 col-sm-offset-4 box margin-clear">
     <div class="row">
       <div class="col-sm-12 padded-left">
-        <h1 class="text-white">Merci de vouloir participer à l'aventure Peanut!</strong> </h1>
+        <h1 class="text-white">Vous souhaitez faire travailler votre argent tout en rendant service? Bienvenue sur Peanut, la première communauté de micro crédits entre particuliers!</strong> </h1>
         <h3 class="text-white">
-        Démarrez votre simulation.
+        Démarrez votre simulation:
       </div>
     </div>
     <div class="row">
@@ -15,7 +15,8 @@
           <div class="form-style-5">
             <%= simple_form_for @loan do |f| %>
               <%= f.error_notification %>
-              <%= f.input :capital, label: "Entrez votre montant:", input_html: { value: "" } %>
+              <%= f.input :capital, label: "quel capital souhaitez-vous investir?", input_html: { value: "" } %>
+              <div>Choisissez votre formule</div>
               <table class="table table-loan">
                 <thead>
                   <tr>
@@ -77,7 +78,7 @@
                       </div>
                     <% end %>
                   </article>
-                  <%= submit_tag "Investir votre argent", class: "btn", id: "connect"%>
+                  <%= submit_tag "Etape suivante", class: "btn", id: "connect"%>
                 <% end %>
               </div>
             <% end %>
