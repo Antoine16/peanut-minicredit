@@ -1,6 +1,6 @@
 <div class="banner-signup container-fluid text-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.1) 50%),url(https://images.unsplash.com/photo-1449603540252-92888fea2f60?dpr=1&amp;auto=format&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb&amp;crop=); background-size: cover;">
 
-  <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
+  <div class="parent margin-clear col-sm-8 col-sm-offset-2 box">
     <div>
       <p>
         Bonjour, Peanut est sur le point de voir le jour! Nous travaillons d'arrache pied pour vous permettre de profiter le plus rapidement possible de notre plateforme de micro-crédits entre particuliers. Si vous souhaitez être au courant du lancement de Peanut, remplissez ce formulaire! Promis, on ne vous spamera pas, on est bien trop occupés à construire la plateforme! Besos!
@@ -9,19 +9,147 @@
   </div>
   <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
     <div class="form-style-5 margin-side">
-
       <%= simple_form_for @loaner do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true, placeholder: "nom@email.com" %>
         </div>
         <div class="form-inputs">
-          <%= f.input :comment, autofocus: true, placeholder: "Des commentaires? Des idées? Des suggestions? Allez-y, c'est ici!" %>
+          <%= f.input :comment, label: "commentaires, suggestions, encouragements, etc...? Exprimez-vous!", autofocus: true, placeholder: "Dépêchez-vous, j'ai trop hâte d'utiliser Peanut!!! :)" %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "S'enregistrer" %>
+          <%= f.button :submit, "envoyer" %>
         </div>
       <% end %>
+    </div>
+  </div>
+  <div class="parent margin-clear col-sm-8 col-sm-offset-2 box">Vous vous posez des questions?
+    <div class="form-style-5 margin-side">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formules_rendement">
+        Sur quoi reposent les différentes formules de rendement?
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="formules_rendement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Les différentes formules de rendement</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Peanut est une plateforme reposant sur la confiance. Nous sommes d'un naturel confiant cela dit il s'agit de votre argent! Par conséquent, nous demandons aux emprunteurs de justifier la confiance que nous plaçons en eux, notamment lors de la souscription de leur premier crédit: ils doivent absolument rembourser en temps et en heure, faute de quoi ils sont exclus de la communauté et ne pourront plus jamais souscrire de crédits. Au fure et à mesure des crédits effectués et remboursés, la confiance augmente. Il est donc normal qu'avant que la confiance ne soit réellement établie, les taux plus élevés que par la suite. Les rendements de nos formules reflètent cette progression de la confiance et reposent sur l'antériorité de la relation entre un emprunteur et Peanut. Si vous choisissez le niveau de rendement maximal, votre capital sera utilisé pour alimenter les crédits demandés par les primo-emprunteurs. Si vous optez pour un rendement plus faible, votre capital alimentera les crédits souscrits par les clients de longue date, qui ont fait leurs preuves! C'est votre choix, rendement élevé = risque élevé mais aussi davantage d'intérêts générés!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formalites">
+        Comment Peanut vérifie la fiabilité des emprunteurs?
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="formalites" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Formalités pour emprunter via Peanut</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Nous souhaitons rendre l'accès aux petites sommes plus facile et moins fastidieux. C'est pourquoi nous avons développé un process de vérification rapide et fiable des emprunteurs qui souhaitent s'inscrire sur la plateforme Peanut. Pour s'inscrire sur Peanut il faut pouvoir justifier de la nationalité française, être majeur, disposer d'une carte de paiement et justifier d'un revenu mensuel. Lors de l'inscription l'emprunteur nous fournit les informations suivantes: nom, prénom, email, adresse, numéro de télephone, justification de revenu mensuel, pièce d'identitié via le process ... ainsi nous nous assurons que la pièce d'identité est authentique et que la carte de paiement renseignée est bien utilisée par son propriétaire. Peanut ne stocke aucune information sensible (ni données de carte de paiement ni les pièces d'identité) conformément à la législation et afin de garantir la sécurité des données personnelles des utilisateurs. Cela dit, Peanut exclut systématiquement les emprunteurs qui ne remboursent pas leur premier crédit. Il leur sera impossible de souscrire à nouveau à un crédit.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#non_remboursement">
+        Que se passe-t-il si l'emprunteur ne rembourse pas son crédit?
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="non_remboursement" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Si l'emprunteur ne rembourse pas à la date prévue</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Peanut a mis en place des procédures de recouvrement des impayés et nous présenteront la demande de paiement de créance toutes les 24h et ce pendant 10 jours ouvrés en incluant des pénalités de retard. Si au bout des 10j la somme n'a toujours pas pu être percue nous entamons une procédure de recouvrement. Lorsque vous placez de l'argent sur Peanut vous acceptez les conditions général de nos services. Il peut arriver que certains crédits ne soient pas remboursés. Afin de minimiser le risque pour votre capital, tout crédit souscrit par un primo emprunteur (dont nous n'avons pas encore pu tester la fiabilité) est issu de plusieurs comptes prêteurs. Par exemple, si un primo-emprunteur souhaite souscrire à un crédit Peanut de 150€, nous solliciterons 15 différents comptes prêteurs à hauteur de 10€ chacun, ainsi, le risque est mutualisé. Si vous ne souhaitez pas mutualiser le risque et souhaitez être l'unique pourvoyeur auprès de primo-emprunteurs (taux d'intérêts les plus élevés) vous pouvez le faire en modifiant vos paramètres de formule de rendement dans votre compte
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifier_formule">
+        Est-ce que je peux modifier ma formule de rendement en cours de route?
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modifier_formule" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Changer sa formule</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Vous faites ce que vous voulez quand vous le voulez! Il suffit de modifier votre formule dans les paramètres de votre compte, le changement est instantané et s'appliquera à tous les crédits qu'alimentera votre capital dès la modification. Les sommes engagées sur des crédits lors de la modification ne seront pas concernées par celle-ci.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#capital_disponible">
+        Est-ce que le capital que je confie à Peanut est disponible?
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="capital_disponible" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Votre capital est disponible</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Vous pouvez décider à tout moment de bloquer votre capital. Le montant non engagé sur des crédits au moment de votre blocage ne participeront plus à aucun crédit, jusqu'à ce que vous décidiez de le débloquer. Les sommes déjà engagés sur des crédits seront également bloquées dès que ces crédits seront remboursés par les emprunteurs. <br>
+              Vous pouvez également retirer une partie de votre capital. Si vous avez besoin de liquidités il vous suffit d'indiquer la somme que vous souhaitez désengager de la plateforme. Cette somme sera alors créditée sur votre compte banquaire lié dans les délais standards définis par les transferts bancaires.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
