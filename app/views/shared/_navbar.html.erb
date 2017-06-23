@@ -20,31 +20,7 @@
       <% end %>
 
     <!-- Different navigation if login or not -->
-    <% if user_signed_in? %>
 
-      <!-- Profile picture and dropdown -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <span id="navbar-wagon-menu" data-toggle="dropdown" class="text-white"><%= current_user.first_name %> <%= current_user.last_name %></span>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to root_path do %>
-                <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "admin"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
-    <% end %>
 
 
   </div>
@@ -54,11 +30,12 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><%= link_to t(".sign_in", default: "Créer mon compte"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <li><%= link_to t(".sign_in", default: "Mon compte"), user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <li><%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Se déconnecter") %>
-          <% end %>
+        <li><%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn", id: "CTA" do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+      <% end %>
+        <li><%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button-give btn", id: "CTC" do %>
+        <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
+      <% end %>
       </ul>
     </div>
   </div>
