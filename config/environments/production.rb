@@ -1,6 +1,5 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "https://peanut-minicredit.herokuapp.com/" }
-  config.action_mailer.sendgrid_settings   = { api_key: ENV['SENDGRID_API_KEY'] }
   config.action_mailer.delivery_method = :sendgrid
   # Settings specified here will take precedence over those in config/application.rb.
 
