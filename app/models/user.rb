@@ -10,10 +10,4 @@ class User < ApplicationRecord
     email
   end
 
-  private
-
-  def send_welcome_email
-    UserMailer.welcome(self).deliver_now
-  end
-
 end
