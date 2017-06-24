@@ -13,7 +13,7 @@
         <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
       <% end %>
        <!-- Button loan) -->
-      <%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button-give btn", id: "CTC" do %>
+      <%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button btn", id: "CTC" do %>
         <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
       <% end %>
   </div>
@@ -23,7 +23,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-      <%= link_to new_loan_path do %>
+        <li><%= link_to "#", class: "navbar-wagon-item navbar-wagon-button btn" do %>
+        <i class="fa fa-credit-card" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Demander un prêt") %>
+      <% end %>
+        <li><%= link_to  new_loan_path, class: "navbar-wagon-item navbar-wagon-button btn", id: "CTC" do %>
         <i class="fa fa-money" aria-hidden="true"></i> <%= t(".top_call_to_action", default: "Prêter de l'argent") %>
       <% end %>
       </ul>
