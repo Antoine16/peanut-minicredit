@@ -8,7 +8,11 @@ class BorrowersController < ApplicationController
     @borrower = Borrower.new
     @borrower.email = borrower_params[:email]
     @borrower.comment = borrower_params[:comment]
-    @borrower.save
+    if @borrower.save
+      BorrowerMailer.welcome(@borrower).deliver_now
+    else
+      flash[:alert] = "An error occurred while delivering this message."
+    end
     render :show
   end
 
