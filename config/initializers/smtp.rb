@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
-  address: ENV['POSTMARK_SMTP_SERVER'],
+  address: ENV['SENDGRID_SMTP_SERVER'],
   port: '25',
-  domain: 'heroku.com',
-  user_name: ENV['POSTMARK_API_KEY'],
-  password: ENV['POSTMARK_API_TOKEN'],
-  authentication: :cram_md5,
+  domain: 'https://peanut-minicredit.herokuapp.com/',
+  user_name: ENV['SENDGRID_USERNAME'],
+  password: ENV['SENDGRID_PASSWORD'],
+  authentication: :plain,
   enable_starttls_auto: true
 }
