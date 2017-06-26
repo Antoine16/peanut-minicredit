@@ -1,5 +1,5 @@
 ActionMailer::Base.smtp_settings = {
-  address: smtp.sendgrid.net,
+  address: 'smpt.sendgrid.net',
   port: '465',
   domain: 'https://peanut-minicredit.herokuapp.com/',
   user_name: ENV['SENDGRID_USERNAME'],
