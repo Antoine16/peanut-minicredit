@@ -9,14 +9,15 @@
     <div class="container">
       <div class="row margin-clear">
         <div class="col-sm-10 col-sm-offset-1 box">
-          <h1 class="padded-left text-white"><strong>blabla</strong> </h1>
+          <h1 class="padded-left text-white">Récapitulatif de votre crédit : </h1>
             <div class="row">
               <div class="col-sm-12">
                 <div style="background-color: rgba(250,250,250,0.8); padding-top: 1px; padding-bottom: 15px; padding-left: 25PX; border-radius: 8px; text-align: left;">
-                  <h3> Vous avez demandé un crédit de <strong class="essai"><%= @credit.amount %> € </strong> </h3>
-                  <h3> Plus que quelques clics et il sera disponible directement sur votre carte bancaire en 24h!</h3>
-                  <h3> Le remboursement de <%= @credit.total_amount %> € sera prélevé sur celle-ci le <%= @credit.refund_at.strftime("%d/%m/%Y") %></h3>
-                  <p>Dont <strong> <%= @credit.interest%> €</strong> d'intérêts</p>
+                  <h3> Le montant du crédit demandé est de <strong class="essai"><%= @credit.amount %> € </h3>
+                  <p> Vous receverez par mail en moins de 30 minutes, l'acceptation ou non de ce prêt. <br>Une fois validé votre carte sera directement créditée.</p>
+                  <h3> Le <%= @credit.refund_at.strftime("%d/%m/%Y") %> la somme de <%= @credit.total_amount %> € sera débitée de votre compte. </h3>
+
+                  <p>Cette sommes prends en compte les <strong> <%= @credit.interest%> €</strong> d'intérêts liés à votre crédit.</p>
                     <%= form_tag credits_path do %>
                       <article>
                         <% if flash[:error].present? %>
@@ -25,7 +26,7 @@
                           </div>
                         <% end %>
                       </article>
-                      <%= submit_tag "Obtenir ce crédit", class: "btn", id: "connect"%>
+                      <%= submit_tag "Valider ce crédit", class: "btn", id: "connect"%>
                     <% end %>
                 </div>
               </div>

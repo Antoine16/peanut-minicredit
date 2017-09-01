@@ -16,11 +16,15 @@
 
   <div class="price-form">
     <div class="form-group">
+      <!--
       <label for="amount" class="col-sm-6 control-label">Montant : </label>
+      -->
       <div class="col-sm-6">
         <input type="hidden" name="sim[amount]" id="amount" class="form-control">
+       <!--
         <p class="price lead" id="amount-label"></p>
         <span class="price">€</span>
+        -->
       </div>
     </div>
     <div class="form-group">
@@ -43,6 +47,7 @@
         <span class="price">€</span>
       </div>
     </div>
+    <!--
     <div class="form-group">
       <label for="duration" class="col-sm-6 control-label"> Prélévé le : </label>
       <div class="col-sm-6">
@@ -51,6 +56,7 @@
         <span class="price"></span>
       </div>
     </div>
+    -->
   </div>
   <div class="call">
     <%= link_to new_credit_path, class: "navbar-wagon-item subscribe-button btn" do %>
