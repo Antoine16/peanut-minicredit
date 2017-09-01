@@ -20,7 +20,7 @@ class CreditsController < ApplicationController
   def set_credit
     @credit = Credit.new(amount: session[:amount])
     @credit.refund_at = (Date.today + session[:nb_days].to_i.days)
-    @credit.interest = @credit.amount * (session[:nb_days].to_i) / 100
+    @credit.interest = @credit.amount * (session[:nb_days].to_i) / 150
     @credit.total_amount = @credit.amount + @credit.interest
   end
 
