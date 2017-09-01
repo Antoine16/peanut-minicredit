@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     @credit = Credit.new
     @credit.amount = sim_params[:amount]
     @credit.refund_at = (Date.today + sim_params[:nb_days].to_i.days)
-    @credit.interest = @credit.amount * (sim_params[:nb_days].to_i) / 250 + 1
+    @credit.interest = @credit.amount * (sim_params[:nb_days].to_i) / 170
     @total_amount = @credit.amount + @credit.interest
     session[:amount] = sim_params[:amount]
     session[:nb_days] = sim_params[:nb_days]
