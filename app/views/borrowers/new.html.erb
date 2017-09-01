@@ -2,9 +2,11 @@
 
   <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
     <div>
-      <p>
-        Bonjour, Peanut est sur le point de voir le jour! Nous travaillons d'arrache pied pour vous permettre de profiter le plus rapidement possible de notre plateforme de micro-crédits entre particuliers. Si vous souhaitez être au courant du lancement de Peanut, remplissez ce formulaire! Promis, on ne vous spamera pas, on est bien trop occupés à construire la plateforme! Besos!
-      </p>
+      <h5>
+        <br>Merci de votre intérêt,<br> Peanut est actuellement en cours de développement !
+        <br>Pour être averti de son lancement, renseigner votre email ci-dessous.
+
+      </h5>
     </div>
   </div>
   <div class="parent margin-clear col-sm-4 col-sm-offset-4 box">
@@ -16,10 +18,11 @@
           <%= f.input :email, required: true, autofocus: true, placeholder: "nom@email.com" %>
         </div>
         <div class="form-inputs">
-          <%= f.input :comment, autofocus: true, placeholder: "Des commentaires? Des idées? Des suggestions? Allez-y, c'est ici!" %>
+          <%= f.input :comment, label: "Un avis", autofocus: true, placeholder: "Des commentaires ? Des suggestions ? Allez-y, c'est ici !" %>
         </div>
+
         <div class="form-actions">
-          <%= f.button :submit, "S'enregistrer" %>
+          <%= f.button :submit, "Valider" %>
         </div>
       <% end %>
     </div>
