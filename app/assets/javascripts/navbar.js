@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(window).scroll(function() {
       var scroll = $(window).scrollTop();
 
-      if (scroll >= 700) {
+      if (scroll >= 690) {
           $("#CTA").show();
           $(".navbar-wagon").addClass("color");
 

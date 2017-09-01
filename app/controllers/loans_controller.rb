@@ -10,7 +10,7 @@ class LoansController < ApplicationController
     @loan.roi = set_roi
     @loan.capital = loan_params[:capital]
     @loan.save
-    redirect_to new_loaner_path
+    redirect_to new_borrower_path
   end
 
   private
