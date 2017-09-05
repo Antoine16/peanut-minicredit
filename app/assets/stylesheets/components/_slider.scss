@@ -86,7 +86,7 @@ h4.great {
 
 .total {
 
-  /*border-bottom: 1px solid #7f8c8d;
+  border-bottom: 1px solid #7f8c8d;
   /*display: inline;
   padding: 10px 5px;*/
   position: relative;
@@ -190,4 +190,9 @@ hr.style {
 #amount-label, #interests, #total-amount  {
   margin: 0;
 
+}
+
+.call {
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
